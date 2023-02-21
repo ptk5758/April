@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
-{
+public abstract class Item : MonoBehaviour
+{    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
         Rabbit instance = other.gameObject.GetComponent<Rabbit>();
+        instance.item = this;
         instance.isItem = true;
 
     }
@@ -17,6 +18,8 @@ public class Item : MonoBehaviour
         {
             Rabbit instance = other.gameObject.GetComponent<Rabbit>();
             instance.isItem = false;
+            instance.item = null;
         }
     }
+    public abstract void UseItem();
 }

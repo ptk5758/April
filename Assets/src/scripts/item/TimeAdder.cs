@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultEgg : Egg
+public class TimeAdder : Item
 {
     public override void UseItem()
     {
-        Debug.Log("달걀 이벤트");
+        Debug.Log("시간 추가");
     }
 }
