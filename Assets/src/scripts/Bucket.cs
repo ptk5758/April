@@ -7,8 +7,7 @@ public class Bucket : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag != "Player") return;
-        Debug.Log(other);
+        if (other.tag != "Player") return;        
     }
 
 }

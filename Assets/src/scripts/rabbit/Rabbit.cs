@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class Rabbit : MonoBehaviour
 {
     public float speed = 1;
-    private void Update()
+    public bool isItem = false;
+    private void FixedUpdate()
     {
         Moving();
     }
