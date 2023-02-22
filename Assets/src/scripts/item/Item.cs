@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public abstract class Item : MonoBehaviour
 {
+    public enum Type { None, Egg, TimeAdder, before=-1 }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
