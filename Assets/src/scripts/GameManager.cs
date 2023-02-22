@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
                 }
             }
             Image obj = Instantiate(imgPrefabs[(short) itemType], itemArea.transform);
+            Button btn = obj.GetComponent<Button>();
+            btn.onClick.AddListener(()=> { Debug.Log("TEST"); });
             lastItemType = itemType;
         }
 
-    }
+    }    
 
     private void Awake()
     {        
