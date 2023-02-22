@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     {
         if (itemType != lastItemType)
         {
+            if (itemType == Item.Type.before) return;
+            if (itemArea.GetComponentsInChildren<Image>().Length > 0)
+            {
+                foreach (Image _img in itemArea.GetComponentsInChildren<Image>())
+                {
+                    Destroy(_img.gameObject);
+                }
+            }
             Image obj = Instantiate(imgPrefabs[(short) itemType], itemArea.transform);
             lastItemType = itemType;
         }
