@@ -6,13 +6,32 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance 
+    {
+        get
+        {
+            if (instance == null) 
+            {
+                var obj = FindObjectOfType<GameManager>();
+                if (obj != null)
+                    instance = obj;                
+            }
+            return instance;
+
+        }
+        set { instance = value; }
+    }
 
     public GameObject itemArea;
     public Image[] imgPrefabs;
     public Item.Type itemType = Item.Type.None;
     private Item.Type lastItemType;
-    // public System.Action<int> itemAreaFunc;
+    public System.Action itemAction;
+    public string test;
+    public void UseItem()
+    {
+        itemAction?.Invoke();
+    }
     private void Update()
     {
         if (itemType != lastItemType)
@@ -27,7 +46,7 @@ public class GameManager : MonoBehaviour
             }
             Image obj = Instantiate(imgPrefabs[(short) itemType], itemArea.transform);
             Button btn = obj.GetComponent<Button>();
-            btn.onClick.AddListener(()=> { Debug.Log("TEST"); });
+            btn.onClick.AddListener(UseItem);
             lastItemType = itemType;
         }
 
