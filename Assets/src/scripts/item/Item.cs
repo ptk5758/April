@@ -28,24 +28,18 @@ public abstract class Item : MonoBehaviour, IItem
     private GameManager gm;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player") return;
-        /*
-        Rabbit instance = other.gameObject.GetComponent<Rabbit>();
-        instance.item = this;
-        instance.isItem = true;
-        */
+        if (other.gameObject.tag != "Player") return;        
+        // Rabbit instance = other.gameObject.GetComponent<Rabbit>();        
         gm.itemAction += UseItem;
+        gm.itemType = this.type;
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
-        {
-            /*
-            Rabbit instance = other.gameObject.GetComponent<Rabbit>();
-            instance.isItem = false;
-            instance.item = null;
-            */
+        {            
+            // Rabbit instance = other.gameObject.GetComponent<Rabbit>();            
             gm.itemAction -= UseItem;
+            gm.itemType = Type.None;
         }
     }
     private void Awake()
