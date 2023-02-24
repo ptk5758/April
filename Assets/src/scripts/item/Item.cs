@@ -50,24 +50,6 @@ public abstract class Item : MonoBehaviour, IItem
     {        
         gm.itemHandler -= OnUseItem;
         gm.itemType = Item.Type.None;
-            
-    }
-
-    private static bool CheckDelegateHasMethod<DType>(DType @delegate, DType method) where DType : System.Delegate
-    {
-        foreach (System.Delegate del in @delegate.GetInvocationList())
-        {
-            if (del.Method == method.Method)
-            {
-                return true;
-            }
-        }
-        return false;
-        
-        /* return @delegate?.GetInvocationList()
-                .Where(d => d.Method == method.Method)
-                .Count() > 0;
-        */
-    }
+    }    
 
 }
