@@ -26,11 +26,11 @@ public class GameManager : MonoBehaviour
     public Image[] imgPrefabs;
     public Item.Type itemType = Item.Type.None;
     private Item.Type lastItemType;
-    public System.Action itemAction;
-    public string test;
+    public System.Action<Rabbit> itemAction;
+    public Rabbit player;
     public void UseItem()
     {
-        itemAction?.Invoke();
+        itemAction?.Invoke(player);
     }
     private void Update()
     {
