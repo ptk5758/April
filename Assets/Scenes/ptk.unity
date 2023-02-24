@@ -366,7 +366,7 @@ MonoBehaviour:
   - {fileID: 2475108332055943606, guid: 2e233f713a603584fb32a88230f210cd, type: 3}
   - {fileID: 8229711975966613363, guid: 5c829ecd6603aae45a2a4daa0bfbe491, type: 3}
   itemType: 0
-  test: sdasdasd
+  player: {fileID: 1643625614}
 --- !u!4 &657296394
 Transform:
   m_ObjectHideFlags: 0
@@ -1092,8 +1092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  isItem: 0
-  <item>k__BackingField: {fileID: 0}
 --- !u!54 &1643625615
 Rigidbody:
   m_ObjectHideFlags: 0

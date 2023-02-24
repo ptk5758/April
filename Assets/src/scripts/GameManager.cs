@@ -26,11 +26,11 @@ public class GameManager : MonoBehaviour
     public Image[] imgPrefabs;
     public Item.Type itemType = Item.Type.None;
     private Item.Type lastItemType;
-    public System.Action<Rabbit> itemAction;
+    public System.Action<Rabbit> itemHandler;
     public Rabbit player;
     public void UseItem()
     {
-        itemAction?.Invoke(player);
+        itemHandler?.Invoke(player);
     }
     private void Update()
     {
@@ -68,5 +68,5 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         lastItemType = Item.Type.before;
-    }
+    }    
 }

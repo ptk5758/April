@@ -29,14 +29,14 @@ public abstract class Item : MonoBehaviour, IItem
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;        
-        gm.itemAction += OnUseItem;
+        gm.itemHandler += OnUseItem;
         gm.itemType = this.type;
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
-        {            
-            gm.itemAction -= OnUseItem;
+        {
+            gm.itemHandler -= OnUseItem;
             gm.itemType = Type.None;
         }
     }
@@ -46,4 +46,28 @@ public abstract class Item : MonoBehaviour, IItem
         TypeInit();
     }
     public abstract void OnUseItem(Rabbit rabbit);
+    private void OnDestroy()
+    {        
+        gm.itemHandler -= OnUseItem;
+        gm.itemType = Item.Type.None;
+            
+    }
+
+    private static bool CheckDelegateHasMethod<DType>(DType @delegate, DType method) where DType : System.Delegate
+    {
+        foreach (System.Delegate del in @delegate.GetInvocationList())
+        {
+            if (del.Method == method.Method)
+            {
+                return true;
+            }
+        }
+        return false;
+        
+        /* return @delegate?.GetInvocationList()
+                .Where(d => d.Method == method.Method)
+                .Count() > 0;
+        */
+    }
+
 }

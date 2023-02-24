@@ -6,6 +6,7 @@ public class DefaultEgg : Egg
 {
     public override void OnUseItem(Rabbit rabbit)
     {
-        Debug.Log("¥ﬁ∞ø ¿Ã∫•∆Æ");
+        rabbit.AddEgg(this);
+        Destroy(gameObject);        
     }
 }
