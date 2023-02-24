@@ -6,10 +6,17 @@ public abstract class Rabbit : MonoBehaviour
 {
     
     public float speed = 1;
+    public float eggWeight = 0.5f;
     [SerializeField] private List<Egg> eggs;
+    private float _speed;
     private void Awake()
     {
         eggs = new List<Egg>();
+        // _speed = speed - eggs.Count * eggWeight;
+    }
+    private void Update()
+    {
+        _speed = speed - eggs.Count * eggWeight;
     }
     private void FixedUpdate()
     {
@@ -20,7 +27,7 @@ public abstract class Rabbit : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
+        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
     }
     public void AddEgg(Egg egg)
     {        
