@@ -28,28 +28,18 @@ public class GameManager : MonoBehaviour
     private Item.Type lastItemType;
     public System.Action<Rabbit> itemHandler;
     public Rabbit player;
+    [SerializeField]
+    private Text eggCountUI;
+    [SerializeField]
+    private int eggCount = 0;
     public void UseItem()
     {
         itemHandler?.Invoke(player);
     }
+    
     private void Update()
     {
-        if (itemType != lastItemType)
-        {
-            if (itemType == Item.Type.before) return;
-            if (itemArea.GetComponentsInChildren<Image>().Length > 0)
-            {
-                foreach (Image _img in itemArea.GetComponentsInChildren<Image>())
-                {
-                    Destroy(_img.gameObject);
-                }
-            }
-            Image obj = Instantiate(imgPrefabs[(short) itemType], itemArea.transform);
-            Button btn = obj.GetComponent<Button>();
-            btn.onClick.AddListener(UseItem);
-            lastItemType = itemType;
-        }
-
+        CheckItem();
     }    
 
     private void Awake()
@@ -68,5 +58,30 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         lastItemType = Item.Type.before;
-    }    
+        AddEggCount(0);
+    }
+    public void AddEggCount(int count)
+    {
+        eggCount += count;
+        eggCountUI.text = $"회수 시킨 알 : {eggCount} 개";
+    }
+
+    private void CheckItem()
+    {
+        if (itemType != lastItemType)
+        {
+            if (itemType == Item.Type.before) return;
+            if (itemArea.GetComponentsInChildren<Image>().Length > 0)
+            {
+                foreach (Image _img in itemArea.GetComponentsInChildren<Image>())
+                {
+                    Destroy(_img.gameObject);
+                }
+            }
+            Image obj = Instantiate(imgPrefabs[(short)itemType], itemArea.transform);
+            Button btn = obj.GetComponent<Button>();
+            btn.onClick.AddListener(UseItem);
+            lastItemType = itemType;
+        }
+    }
 }
