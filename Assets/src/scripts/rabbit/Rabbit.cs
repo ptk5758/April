@@ -7,7 +7,7 @@ public abstract class Rabbit : MonoBehaviour
     
     public float speed = 1;
     public float eggWeight = 0.5f;
-    [SerializeField] private List<Egg> eggs;
+    public List<Egg> eggs;
     private float _speed;
     private void Awake()
     {
