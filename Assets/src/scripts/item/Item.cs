@@ -29,16 +29,14 @@ public abstract class Item : MonoBehaviour, IItem
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;        
-        // Rabbit instance = other.gameObject.GetComponent<Rabbit>();        
-        gm.itemAction += UseItem;
+        gm.itemHandler += OnUseItem;
         gm.itemType = this.type;
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
-        {            
-            // Rabbit instance = other.gameObject.GetComponent<Rabbit>();            
-            gm.itemAction -= UseItem;
+        {
+            gm.itemHandler -= OnUseItem;
             gm.itemType = Type.None;
         }
     }
@@ -47,5 +45,11 @@ public abstract class Item : MonoBehaviour, IItem
         this.gm = GameManager.Instance;
         TypeInit();
     }
-    public abstract void UseItem();
+    public abstract void OnUseItem(Rabbit rabbit);
+    private void OnDestroy()
+    {        
+        gm.itemHandler -= OnUseItem;
+        gm.itemType = Item.Type.None;
+    }    
+
 }

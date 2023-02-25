@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TimeAdder : Item
 {
-    public override void UseItem()
+    public override void OnUseItem(Rabbit rabbit)
     {
-        Debug.Log("시간 추가");
+        Debug.Log(rabbit);
     }
 }
