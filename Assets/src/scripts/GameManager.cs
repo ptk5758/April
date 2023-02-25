@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
             return instance;
 
         }
-        set { instance = value; }
+        private set { instance = value; }
     }
 
     public GameObject itemArea;
