@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 991206634}
   - component: {fileID: 991206638}
   m_Layer: 0
-  m_Name: Bucket
+  m_Name: Nest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
