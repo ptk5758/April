@@ -17,4 +17,12 @@ public abstract class Enemy : MonoBehaviour, IEnemy
     {
         navMeshAgent.SetDestination(target.position);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.tag != "Player") return;
+        collision.gameObject.GetComponent<Rabbit>().OnHit(this);
+
+    }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Rabbit : MonoBehaviour
+public abstract class Rabbit : MonoBehaviour, IRabbit
 {
     private static Rabbit instance;
     public static Rabbit Instance
@@ -24,6 +24,7 @@ public abstract class Rabbit : MonoBehaviour
     public float eggWeight = 0.5f;
     public List<Egg> eggs;
     private float _speed;
+    private Vector3 spawnPostion;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -40,6 +41,7 @@ public abstract class Rabbit : MonoBehaviour
     private void Init()
     {
         eggs = new List<Egg>();
+        spawnPostion = transform.position;
 
     }
     private void Update()
@@ -61,4 +63,11 @@ public abstract class Rabbit : MonoBehaviour
     {        
         eggs.Add(egg);
     }
+
+    public void OnHit(Enemy enemy)
+    {
+        Debug.Log("ºÎµúÈû");
+        transform.position = spawnPostion;
+    }
+    
 }
