@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
     private Text eggCountUI;
     [SerializeField]
     private int eggCount = 0;
+
+    // Play Time
+    [field:SerializeField]
+    public float playTime { private set; get; }
+    public Text playTimeUI;
+
     public void UseItem()
     {
         itemHandler?.Invoke(player);
@@ -40,7 +46,15 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CheckItem();
-    }    
+        ActionPlayTime();
+    }
+    private void ActionPlayTime()
+    {
+        playTime -= Time.deltaTime;
+        int m = (int) playTime / 60;
+        int s = (int) playTime % 60;
+        playTimeUI.text = $"TIME {m} : {s}";
+    }
 
     private void Awake()
     {        
@@ -63,7 +77,7 @@ public class GameManager : MonoBehaviour
     public void AddEggCount(int count)
     {
         eggCount += count;
-        eggCountUI.text = $"회수 시킨 알 : {eggCount} 개";
+        eggCountUI.text = $"Egg : {eggCount} 개";
     }
 
     private void CheckItem()
