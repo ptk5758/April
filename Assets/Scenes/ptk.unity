@@ -506,7 +506,8 @@ MonoBehaviour:
   player: {fileID: 1643625614}
   eggCountUI: {fileID: 819500744}
   eggCount: 0
-  <playTime>k__BackingField: 0
+  <playTime>k__BackingField: 300
+  playTimeUI: {fileID: 179030353}
 --- !u!4 &657296394
 Transform:
   m_ObjectHideFlags: 0
