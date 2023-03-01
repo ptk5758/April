@@ -2,17 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Rabbit : MonoBehaviour
+public abstract class Rabbit : MonoBehaviour, IRabbit
 {
-    
+    private static Rabbit instance;
+    public static Rabbit Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                var obj = FindObjectOfType<Rabbit>();
+                if (obj != null)
+                    instance = obj;                
+            }
+            return instance;
+        }
+        private set { instance = value; }
+    }
+
     public float speed = 1;
     public float eggWeight = 0.5f;
     public List<Egg> eggs;
     private float _speed;
+    private Vector3 spawnPostion;
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+        Init();
+    }
+    private void Init()
+    {
         eggs = new List<Egg>();
-        // _speed = speed - eggs.Count * eggWeight;
+        spawnPostion = transform.position;
+
     }
     private void Update()
     {
@@ -33,4 +63,11 @@ public abstract class Rabbit : MonoBehaviour
     {        
         eggs.Add(egg);
     }
+
+    public void OnHit(Enemy enemy)
+    {
+        Debug.Log("ºÎµúÈû");
+        transform.position = spawnPostion;
+    }
+    
 }
