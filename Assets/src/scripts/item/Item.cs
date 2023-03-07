@@ -26,12 +26,17 @@ public abstract class Item : MonoBehaviour, IItem
         }
     }
     private GameManager gm;
+
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("AAA");
+        Rabbit instance = Rabbit.Instance;
+        Debug.Log(instance);
         if (other.gameObject.tag != "Player") return;        
         gm.itemHandler += OnUseItem;
         gm.itemType = this.type;
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

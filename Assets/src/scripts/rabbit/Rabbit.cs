@@ -25,6 +25,10 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     public List<Egg> eggs;
     private float _speed;
     private Vector3 spawnPostion;
+
+
+    [field:SerializeField]
+    public Item Item { get; set; }
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -66,7 +70,7 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
 
     public void OnHit(Enemy enemy)
     {
-        Debug.Log("ºÎµúÈû");
+        Debug.Log("??????");
         transform.position = spawnPostion;
     }
     
