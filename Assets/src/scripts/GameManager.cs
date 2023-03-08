@@ -73,6 +73,6 @@ public class GameManager : MonoBehaviour
     public void AddEggCount(int count)
     {
         eggCount += count;
-        eggCountUI.text = $"Egg : {eggCount} ??";
+        eggCountUI.text = $"Egg : {eggCount}";
     }
 }
