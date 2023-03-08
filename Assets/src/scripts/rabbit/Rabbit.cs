@@ -27,8 +27,13 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     private Vector3 spawnPostion;
 
 
+    /*
+     * Rabbit Take Item
+     */
     [field:SerializeField]
     public Item Item { get; set; }
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -70,7 +75,7 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
 
     public void OnHit(Enemy enemy)
     {
-        Debug.Log("??????");
+        Debug.Log("On Hit");
         transform.position = spawnPostion;
     }
     

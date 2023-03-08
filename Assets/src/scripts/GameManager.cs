@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject itemArea;
     public Image[] imgPrefabs;
-    public Item.Type itemType = Item.Type.None;
-    private Item.Type lastItemType;
     public System.Action<Rabbit> itemHandler;
     public Rabbit player;
     [SerializeField]
@@ -45,7 +43,6 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
-        CheckItem();
         ActionPlayTime();
     }
     private void ActionPlayTime()
@@ -71,31 +68,11 @@ public class GameManager : MonoBehaviour
     }
     private void Init()
     {
-        lastItemType = Item.Type.before;
         AddEggCount(0);
     }
     public void AddEggCount(int count)
     {
         eggCount += count;
-        eggCountUI.text = $"Egg : {eggCount} °³";
-    }
-
-    private void CheckItem()
-    {
-        if (itemType != lastItemType)
-        {
-            if (itemType == Item.Type.before) return;
-            if (itemArea.GetComponentsInChildren<Image>().Length > 0)
-            {
-                foreach (Image _img in itemArea.GetComponentsInChildren<Image>())
-                {
-                    Destroy(_img.gameObject);
-                }
-            }
-            Image obj = Instantiate(imgPrefabs[(short)itemType], itemArea.transform);
-            Button btn = obj.GetComponent<Button>();
-            btn.onClick.AddListener(UseItem);
-            lastItemType = itemType;
-        }
+        eggCountUI.text = $"Egg : {eggCount} ??";
     }
 }
