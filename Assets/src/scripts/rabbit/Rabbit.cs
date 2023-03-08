@@ -28,10 +28,10 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
 
 
     /*
-     * Rabbit Take Item
+     * Rabbit Near Item
      */
     [field:SerializeField]
-    public Item Item { get; set; }
+    public Item NearItem { get; set; }
 
 
     private void Awake()

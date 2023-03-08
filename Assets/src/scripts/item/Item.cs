@@ -5,33 +5,33 @@ using UnityEngine.UI;
 
 public abstract class Item : MonoBehaviour, IItem
 {    
-    private GameManager gm;
+    private Rabbit rabbit;
 
     private void OnTriggerEnter(Collider other)
     {
+        // Rabbit Item In Event
         if (other.gameObject.tag != "Player") return;
-        Rabbit instance = Rabbit.Instance;
-        instance.Item = this;   
-        // gm.itemHandler += OnUseItem;
-        // gm.itemType = this.type;
+        rabbit = other.gameObject.GetComponent<Rabbit>();
+        rabbit.NearItem = this;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        // Rabbit Item Exit Event
         if (other.gameObject.tag == "Player")
         {
-            // gm.itemHandler -= OnUseItem;
-            // gm.itemType = Type.None;
+            if (rabbit.NearItem != null)
+                rabbit.NearItem = null;
         }
     }
     private void Awake()
     {        
-        this.gm = GameManager.Instance;
     }
     public abstract void OnUseItem(Rabbit rabbit);
+
     private void OnDestroy()
-    {        
-        gm.itemHandler -= OnUseItem;
+    {
+        Debug.Log(gameObject + "OnDestroy!");
     }    
 
 }
