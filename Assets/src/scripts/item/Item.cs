@@ -5,51 +5,33 @@ using UnityEngine.UI;
 
 public abstract class Item : MonoBehaviour, IItem
 {    
-    public enum Type { None, Egg, TimeAdder, before = -1 }
+    private Rabbit rabbit;
 
-    [field:SerializeField]
-    public Type type { get; protected set; }
-    private void TypeInit()
-    { 
-        switch (this.GetType().Name)
-        {
-            case "DefaultEgg":
-            case "Egg":
-                type = Type.Egg;
-                break;
-            case "TimeAdder":
-                type = Type.TimeAdder;
-                break;
-            default:
-                type = Type.before;
-                break;
-        }
-    }
-    private GameManager gm;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player") return;        
-        gm.itemHandler += OnUseItem;
-        gm.itemType = this.type;
+        // Rabbit Item In Event
+        if (other.gameObject.tag != "Player") return;
+        rabbit = other.gameObject.GetComponent<Rabbit>();
+        rabbit.NearItem = this;
     }
+
     private void OnTriggerExit(Collider other)
     {
+        // Rabbit Item Exit Event
         if (other.gameObject.tag == "Player")
         {
-            gm.itemHandler -= OnUseItem;
-            gm.itemType = Type.None;
+            if (rabbit.NearItem != null)
+                rabbit.NearItem = null;
         }
     }
     private void Awake()
     {        
-        this.gm = GameManager.Instance;
-        TypeInit();
     }
     public abstract void OnUseItem(Rabbit rabbit);
+
     private void OnDestroy()
-    {        
-        gm.itemHandler -= OnUseItem;
-        gm.itemType = Item.Type.None;
+    {
+        Debug.Log(gameObject + "OnDestroy!");
     }    
 
 }

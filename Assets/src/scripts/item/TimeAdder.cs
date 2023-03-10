@@ -6,6 +6,6 @@ public class TimeAdder : Item
 {
     public override void OnUseItem(Rabbit rabbit)
     {
-        Debug.Log(rabbit);
+        Debug.Log("이거는 타임 추가 아이템이니까 여기에 코드를 넣어주세요");
     }
 }

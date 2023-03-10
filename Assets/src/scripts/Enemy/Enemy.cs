@@ -10,7 +10,7 @@ public abstract class Enemy : MonoBehaviour, IEnemy
 
     private void Awake()
     {
-        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();        
+        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     private void FixedUpdate()
