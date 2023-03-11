@@ -31,7 +31,10 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     private Item lastNearItem = null; // 토끼가 마지막으로 가지고 있던함수
     [field:SerializeField]
     public Item Item { get; set; } // 실제로 가지고있는 아이템
-    public List<Egg> carryEgg;
+    [SerializeField]
+    private List<Egg> carryEgg; // 현재 들고있는 Egg
+    public float eggWeight; // 달걀의 무게
+    private float _speed; // 총 적용된 스피드
 
 
     private void Awake()
@@ -50,6 +53,7 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     }
     private void Update()
     {
+        _speed = speed - eggWeight * carryEgg.Count;
         if (lastNearItem != NearItem)
         {
             lastNearItem = NearItem;
@@ -70,8 +74,7 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        // transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
-        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
+        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
     }
 
     public void PickUpItem() // 아이템을 줍는함수

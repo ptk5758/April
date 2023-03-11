@@ -2089,9 +2089,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed619537c9fcd5a46b6aa1f5a8673d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   <NearItem>k__BackingField: {fileID: 0}
   <Item>k__BackingField: {fileID: 0}
+  carryEgg: []
+  eggWeight: 1
 --- !u!54 &1643625615
 Rigidbody:
   m_ObjectHideFlags: 0
