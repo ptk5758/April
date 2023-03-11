@@ -9,9 +9,9 @@ public class Nest : MonoBehaviour
 
         if (other.tag != "Player") return;
         Rabbit rabbit = other.gameObject.GetComponent<Rabbit>();
-        int count = rabbit.eggs.Count;
+        // int count = rabbit.eggs.Count;
         GameManager gm = GameManager.Instance;        
-        rabbit.eggs.Clear();
+        // rabbit.eggs.Clear();
 
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeAdder : Item
+public class TimeAdder : ActiveItem
 {
     public override void OnUseItem(Rabbit rabbit)
     {

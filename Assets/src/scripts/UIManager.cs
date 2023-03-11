@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
         {
             Color temp = pickUpButton.color;
             temp.a = 1f;
-            pickUpButton.color = temp;
+            pickUpButton.color = temp;            
         }
         else
         {

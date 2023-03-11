@@ -19,19 +19,17 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         }
         private set { instance = value; }
     }
-
-    public float speed = 1;
-    public float eggWeight = 0.5f;
-    public List<Egg> eggs;
-    private float _speed;
-    private Vector3 spawnPostion;
-
-
-    // near Item
-    [field:SerializeField]
-    public Item NearItem { get; set; }
-    private Item lastNearItem = null;
+    [Header("Favorite Variable")]
     private GameManager gameManager;
+
+    [Header("Attribute Variable")]
+    public float speed = 1; // 토끼의 속도
+
+    [field:SerializeField]
+    public Item NearItem { get; set; } // 토끼가 가지고 있는함수
+    private Item lastNearItem = null; // 토끼가 마지막으로 가지고 있던함수
+    [field:SerializeField]
+    public Item Item { get; set; } // 실제로 가지고있는 아이템
 
 
     private void Awake()
@@ -49,7 +47,6 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     }
     private void Update()
     {
-        _speed = speed - eggs.Count * eggWeight;
         if (lastNearItem != NearItem)
         {
             lastNearItem = NearItem;
@@ -70,22 +67,18 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
+        // transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
+        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
     }
-    public void AddEgg(Egg egg)
-    {        
-        eggs.Add(egg);
+
+    public void PickUpItem()
+    {
+        Debug.Log("TTT");
     }
 
     public void OnHit(Enemy enemy)
     {
         Debug.Log("On Hit");
-        transform.position = spawnPostion;
-    }
-
-    public void PickUpEgg()
-    { 
-
     }
     
 }
