@@ -12,6 +12,7 @@ public class Nest : MonoBehaviour
         int count = rabbit.eggs.Count;
         GameManager gm = GameManager.Instance;        
         rabbit.eggs.Clear();
+
     }
 
 }

@@ -481,7 +481,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398780146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -507,15 +507,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.32293522, b: 0.32293522, a: 1}
+  m_Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -714,10 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemArea: {fileID: 873396092}
   player: {fileID: 1643625614}
-  eggCountUI: {fileID: 819500744}
-  eggCount: 0
   <playTime>k__BackingField: 300
-  playTimeUI: {fileID: 179030353}
   uiManager: {fileID: 929391033}
 --- !u!4 &657296394
 Transform:
@@ -1063,6 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playTimeUI: {fileID: 179030353}
+  eggCountUI: {fileID: 819500744}
 --- !u!4 &929391034
 Transform:
   m_ObjectHideFlags: 0

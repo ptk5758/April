@@ -78,5 +78,10 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         Debug.Log("On Hit");
         transform.position = spawnPostion;
     }
+
+    public void PickUpEgg()
+    { 
+
+    }
     
 }
