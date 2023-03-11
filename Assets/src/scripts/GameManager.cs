@@ -64,15 +64,5 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
-        Init();
-    }
-    private void Init()
-    {
-        AddEggCount(0);
-    }
-    public void AddEggCount(int count)
-    {
-        eggCount += count;
-        eggCountUI.text = $"Egg : {eggCount}";
-    }
+    }    
 }
