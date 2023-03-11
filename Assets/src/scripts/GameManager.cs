@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public float playTime { private set; get; }
 
     [Header("Favorite Variable")]
-    public UIManager uiManager;
+    public UIManager uiManager;   
 
     private void Update()
     {
@@ -54,5 +54,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void HandleItemPickUp(bool status)
+    {
+        uiManager.SetAbleToPickUpButton(status);
     }
 }

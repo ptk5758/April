@@ -27,11 +27,11 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     private Vector3 spawnPostion;
 
 
-    /*
-     * Rabbit Near Item
-     */
+    // near Item
     [field:SerializeField]
     public Item NearItem { get; set; }
+    private Item lastNearItem = null;
+    private GameManager gameManager;
 
 
     private void Awake()
@@ -44,18 +44,22 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         {
             instance = this;
         }
+        gameManager = GameManager.Instance;
         DontDestroyOnLoad(gameObject);
-        Init();
-    }
-    private void Init()
-    {
-        eggs = new List<Egg>();
-        spawnPostion = transform.position;
-
     }
     private void Update()
     {
         _speed = speed - eggs.Count * eggWeight;
+        if (lastNearItem != NearItem)
+        {
+            lastNearItem = NearItem;
+            gameManager.HandleItemPickUp(lastNearItem != null);
+        }
+    }
+
+    private void Start()
+    {
+        gameManager.HandleItemPickUp(false);
     }
     private void FixedUpdate()
     {
