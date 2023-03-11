@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [Header("Text Attribute")]
     public Text playTimeUI;
     public Text eggCountUI;
+
     private void Awake()
     {
         InitialMap();

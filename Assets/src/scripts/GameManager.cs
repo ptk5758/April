@@ -25,10 +25,6 @@ public class GameManager : MonoBehaviour
     public GameObject itemArea;
     public System.Action<Rabbit> itemHandler;
     public Rabbit player;
-    [SerializeField]
-    private Text eggCountUI;
-    [SerializeField]
-    private int eggCount = 0;
 
     [field:SerializeField]
     public float playTime { private set; get; }
@@ -64,5 +60,5 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
-    }    
+    }
 }
