@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject itemArea;
-    public Image[] imgPrefabs;
     public System.Action<Rabbit> itemHandler;
     public Rabbit player;
     [SerializeField]
@@ -31,10 +30,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int eggCount = 0;
 
-    // Play Time
     [field:SerializeField]
     public float playTime { private set; get; }
-    public Text playTimeUI;
+
+    [Header("Favorite Variable")]
+    public UIManager uiManager;
 
     public void UseItem()
     {
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         playTime -= Time.deltaTime;
         int m = (int) playTime / 60;
         int s = (int) playTime % 60;
-        playTimeUI.text = $"TIME {m} : {s}";
+        uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
     }
 
     private void Awake()
