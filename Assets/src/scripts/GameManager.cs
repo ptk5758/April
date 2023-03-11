@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject itemArea;
-    public System.Action<Rabbit> itemHandler;
     public Rabbit player;
 
     [field:SerializeField]
@@ -32,20 +31,15 @@ public class GameManager : MonoBehaviour
     [Header("Favorite Variable")]
     public UIManager uiManager;
 
-    public void UseItem()
-    {
-        itemHandler?.Invoke(player);
-    }
-    
     private void Update()
     {
-        ActionPlayTime();
-    }
-    private void ActionPlayTime()
-    {
         playTime -= Time.deltaTime;
-        int m = (int) playTime / 60;
-        int s = (int) playTime % 60;
+    }
+
+    private void LateUpdate() // 모든 Update 구문 호출후 호출됨
+    {
+        int m = (int)playTime / 60;
+        int s = (int)playTime % 60;
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
     }
 
