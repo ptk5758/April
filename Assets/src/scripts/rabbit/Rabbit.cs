@@ -19,19 +19,22 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         }
         private set { instance = value; }
     }
+    [Header("Favorite Variable")]
+    private GameManager gameManager;
 
-    public float speed = 1;
-    public float eggWeight = 0.5f;
-    public List<Egg> eggs;
-    private float _speed;
-    private Vector3 spawnPostion;
+    [Header("Attribute Variable")]
+    public float speed = 1; // 토끼의 속도
 
 
-    /*
-     * Rabbit Near Item
-     */
     [field:SerializeField]
-    public Item NearItem { get; set; }
+    public Item NearItem { get; set; } // 토끼가 가지고 있는함수
+    private Item lastNearItem = null; // 토끼가 마지막으로 가지고 있던함수
+    [field:SerializeField]
+    public Item Item { get; set; } // 실제로 가지고있는 아이템
+    [SerializeField]
+    private List<Egg> carryEgg; // 현재 들고있는 Egg
+    public float eggWeight; // 달걀의 무게
+    private float _speed; // 총 적용된 스피드
 
 
     private void Awake()
@@ -44,18 +47,23 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         {
             instance = this;
         }
+        gameManager = GameManager.Instance;
+        carryEgg = new List<Egg>();
         DontDestroyOnLoad(gameObject);
-        Init();
-    }
-    private void Init()
-    {
-        eggs = new List<Egg>();
-        spawnPostion = transform.position;
-
     }
     private void Update()
     {
-        _speed = speed - eggs.Count * eggWeight;
+        _speed = speed - eggWeight * carryEgg.Count;
+        if (lastNearItem != NearItem)
+        {
+            lastNearItem = NearItem;
+            gameManager.HandleItemPickUp(lastNearItem != null);
+        }
+    }
+
+    private void Start()
+    {
+        gameManager.HandleItemPickUp(false);
     }
     private void FixedUpdate()
     {
@@ -68,15 +76,31 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         float v = Input.GetAxisRaw("Vertical");
         transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
     }
-    public void AddEgg(Egg egg)
-    {        
-        eggs.Add(egg);
+
+    public void PickUpItem() // 아이템을 줍는함수
+    {
+        if (NearItem == null) return;
+        if (NearItem.type == Item.Type.EGG)
+        {
+            PickUpEgg(NearItem);
+        }
+    }
+
+    private void PickUpEgg(Item item)
+    {
+        carryEgg.Add((Egg) item);
+        NearItem = null;
+        item.gameObject.SetActive(false);
     }
 
     public void OnHit(Enemy enemy)
     {
         Debug.Log("On Hit");
-        transform.position = spawnPostion;
+    }
+
+    public List<Egg> GetEgg()
+    {
+        return carryEgg;
     }
     
 }

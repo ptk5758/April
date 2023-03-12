@@ -23,34 +23,26 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject itemArea;
-    public Image[] imgPrefabs;
-    public System.Action<Rabbit> itemHandler;
     public Rabbit player;
-    [SerializeField]
-    private Text eggCountUI;
-    [SerializeField]
-    private int eggCount = 0;
 
-    // Play Time
     [field:SerializeField]
     public float playTime { private set; get; }
-    public Text playTimeUI;
+    public int eggCount { set; get; }
 
-    public void UseItem()
-    {
-        itemHandler?.Invoke(player);
-    }
-    
+    [Header("Favorite Variable")]
+    public UIManager uiManager;   
+
     private void Update()
     {
-        ActionPlayTime();
-    }
-    private void ActionPlayTime()
-    {
         playTime -= Time.deltaTime;
-        int m = (int) playTime / 60;
-        int s = (int) playTime % 60;
-        playTimeUI.text = $"TIME {m} : {s}";
+    }
+
+    private void LateUpdate() // 모든 Update 구문 호출후 호출됨
+    {
+        int m = (int)playTime / 60;
+        int s = (int)playTime % 60;
+        uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
+        uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
     }
 
     private void Awake()
@@ -64,15 +56,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
-        Init();
     }
-    private void Init()
+
+    public void HandleItemPickUp(bool status)
     {
-        AddEggCount(0);
-    }
-    public void AddEggCount(int count)
-    {
-        eggCount += count;
-        eggCountUI.text = $"Egg : {eggCount}";
+        uiManager.SetAbleToPickUpButton(status);
     }
 }
