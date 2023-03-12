@@ -97,5 +97,10 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     {
         Debug.Log("On Hit");
     }
+
+    public List<Egg> GetEgg()
+    {
+        return carryEgg;
+    }
     
 }
