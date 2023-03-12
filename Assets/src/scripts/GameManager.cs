@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     [field:SerializeField]
     public float playTime { private set; get; }
+    public int eggCount { set; get; }
 
     [Header("Favorite Variable")]
     public UIManager uiManager;   
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         int m = (int)playTime / 60;
         int s = (int)playTime % 60;
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
+        uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
     }
 
     private void Awake()
