@@ -23,18 +23,18 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     private GameManager gameManager;
 
     [Header("Attribute Variable")]
-    public float speed = 1; // 토끼의 속도
+    public float speed = 1; // Rabbit Move Speed
 
 
     [field:SerializeField]
-    public Item NearItem { get; set; } // 토끼가 가지고 있는함수
-    private Item lastNearItem = null; // 토끼가 마지막으로 가지고 있던함수
+    public Item NearItem { get; set; } // Rabbit detect to near item
+    private Item lastNearItem = null;
     [field:SerializeField]
-    public Item Item { get; set; } // 실제로 가지고있는 아이템
+    public Item Item { get; set; } // Rabbit have item
     [SerializeField]
-    private List<Egg> carryEgg; // 현재 들고있는 Egg
-    public float eggWeight; // 달걀의 무게
-    private float _speed; // 총 적용된 스피드
+    private List<Egg> carryEgg; // Rabbit Carry Egg
+    public float eggWeight; // egg weight 
+    private float _speed; // Actual Applied Speed
 
 
     private void Awake()
@@ -77,7 +77,7 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
     }
 
-    public void PickUpItem() // 아이템을 줍는함수
+    public void PickUpItem() // pick up to near Item
     {
         if (NearItem == null) return;
         if (NearItem.type == Item.Type.EGG)

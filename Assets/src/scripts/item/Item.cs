@@ -15,7 +15,7 @@ public abstract class Item : MonoBehaviour, IItem
      * */
     private Rabbit rabbit;
     public Type type;
-    public abstract void SetType(); // 자신의 type 을 설정하는 함수 이며 Awake 단계에서 호출된다
+    public abstract void SetType(); // Awake call to this method
     private void OnTriggerEnter(Collider other)
     {
         // Rabbit Item In Event
@@ -32,14 +32,14 @@ public abstract class Item : MonoBehaviour, IItem
                 rabbit.NearItem = null;
         }
     }
-    public abstract void OnUseItem(Rabbit rabbit); // 아이템 사용 할때 호출
+    public abstract void OnUseItem(Rabbit rabbit); // extend the using item
 
     private void Awake()
     {
-        SetType(); // 아이템의 Type 설정
+        SetType(); // Item Type Set
     }
 
-    private void OnDestroy() // 오브젝트가 파괴됄때 호출됨
+    private void OnDestroy() // object destroy after call
     {
         // Debug.Log(gameObject + "OnDestroy!");
     }    

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         playTime -= Time.deltaTime;
     }
 
-    private void LateUpdate() // 모든 Update 구문 호출후 호출됨
+    private void LateUpdate() // Update FiexdUpdate after this Method call
     {
         int m = (int)playTime / 60;
         int s = (int)playTime % 60;
