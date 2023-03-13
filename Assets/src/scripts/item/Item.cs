@@ -10,6 +10,7 @@ public abstract class Item : MonoBehaviour, IItem
         ACTIVE,
         PASSIVE
     }
+
     /**
      * private
      * */
@@ -34,7 +35,7 @@ public abstract class Item : MonoBehaviour, IItem
     }
     public abstract void OnUseItem(Rabbit rabbit); // extend the using item
 
-    private void Awake()
+    private void Awake() // init method
     {
         SetType(); // Item Type Set
     }
