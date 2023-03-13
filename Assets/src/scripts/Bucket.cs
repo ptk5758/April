@@ -11,7 +11,7 @@ public class Bucket : MonoBehaviour
         Rabbit rabbit = other.gameObject.GetComponent<Rabbit>();
         List<Egg> eggs = rabbit.GetEgg();
         GameManager gameManager = GameManager.Instance;
-        gameManager.eggCount = eggs.Count;
+        gameManager.eggCount += eggs.Count;
         eggs.Clear();
     }
 
