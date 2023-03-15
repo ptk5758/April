@@ -109,6 +109,11 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         return carryEgg;
     }
 
+    public void DropEgg()
+    {
+        carryEgg.Clear();
+    }
+
     public void Spawn()
     {
         gameObject.transform.position = spawnPoint;
