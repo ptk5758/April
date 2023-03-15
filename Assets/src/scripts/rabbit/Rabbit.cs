@@ -36,6 +36,9 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     public float eggWeight; // egg weight 
     private float _speed; // Actual Applied Speed
 
+    [field:SerializeField]
+    public Vector3 spawnPoint { get; set; } // Rabbit spawn Point
+
 
     private void Awake()
     {
@@ -47,9 +50,11 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         {
             instance = this;
         }
+        
+        DontDestroyOnLoad(gameObject);
         gameManager = GameManager.Instance;
         carryEgg = new List<Egg>();
-        DontDestroyOnLoad(gameObject);
+        spawnPoint = transform.position;
     }
     private void Update()
     {
@@ -96,11 +101,22 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
     public void OnHit(Enemy enemy)
     {
         Debug.Log("On Hit");
+        Spawn();
     }
 
     public List<Egg> GetEgg()
     {
         return carryEgg;
+    }
+
+    public void DropEgg()
+    {
+        carryEgg.Clear();
+    }
+
+    public void Spawn()
+    {
+        gameObject.transform.position = spawnPoint;
     }
     
 }

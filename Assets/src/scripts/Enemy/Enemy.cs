@@ -22,7 +22,10 @@ public abstract class Enemy : MonoBehaviour, IEnemy
     {
         
         if (collision.gameObject.tag != "Player") return;
-        collision.gameObject.GetComponent<Rabbit>().OnHit(this);
+        Rabbit rabbit = collision.gameObject.GetComponent<Rabbit>(); // find Rabbit instance
+        rabbit.DropEgg(); // Rabbit Carry Egg Clear
+        rabbit.OnHit(this); // Rabbit OnHit Call
+        // collision.gameObject.GetComponent<Rabbit>().OnHit(this);
 
     }
 }
