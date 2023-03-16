@@ -13,6 +13,7 @@ public class Fox : EnemyImple
 
     public void OnRangeEnter()
     {
+        isMove = true;
         Debug.Log("Enter!!!!");
     }
     
