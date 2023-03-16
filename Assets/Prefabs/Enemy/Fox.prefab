@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2733925138461140792}
   - component: {fileID: 2733925138461140793}
   - component: {fileID: 84424529652967633}
-  - component: {fileID: 6476974701887140068}
   - component: {fileID: 2112273416}
+  - component: {fileID: 1048821637486019387}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -116,20 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6476974701887140068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2733925138461140794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3cad00df23bc442b0459f381eb21ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  navMeshAgent: {fileID: 0}
 --- !u!195 &2112273416
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -152,3 +138,17 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1048821637486019387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733925138461140794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3cad00df23bc442b0459f381eb21ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  navMeshAgent: {fileID: 0}
