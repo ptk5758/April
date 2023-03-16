@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Fox : EnemyImple
 {
-    Collider range;
+    public System.Action rangeHandle;
     protected override void Awake()
     {
         base.Awake();
-        range = gameObject.GetComponentInChildren<SphereCollider>();                
+        rangeHandle += OnRangeEnter;
+    }
+
+    public void OnRangeEnter()
+    {
+        Debug.Log("Enter!!!!");
     }
     
 }
