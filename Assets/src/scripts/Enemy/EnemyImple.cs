@@ -18,7 +18,7 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     public bool isMove;
     public Status status;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rabbit = Rabbit.Instance;
         target = rabbit.transform;
@@ -47,7 +47,7 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     }
 
     private void OnCollisionEnter(Collision collision)
-    {        
+    {
         if (collision.gameObject.tag != "Player") return;
         Rabbit rabbit = collision.gameObject.GetComponent<Rabbit>(); // find Rabbit instance
         rabbit.DropEgg(); // Rabbit Carry Egg Clear

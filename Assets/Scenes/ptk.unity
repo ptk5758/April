@@ -1752,6 +1752,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1048821637486019387, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048821637486019387, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
+      propertyPath: isMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2733925138461140774, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1799,6 +1807,14 @@ PrefabInstance:
     - target: {fileID: 2733925138461140794, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
       propertyPath: m_Name
       value: Fox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235759057270819152, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235759057270819152, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6476974701887140068, guid: 93e32df4a4d72fd418f1f40b9d4f3dd7, type: 3}
       propertyPath: target
@@ -2094,6 +2110,7 @@ MonoBehaviour:
   <Item>k__BackingField: {fileID: 0}
   carryEgg: []
   eggWeight: 1
+  <spawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!54 &1643625615
 Rigidbody:
   m_ObjectHideFlags: 0
