@@ -9,7 +9,7 @@ public class Bucket : MonoBehaviour
 
         if (other.tag != "Player") return;
         Rabbit rabbit = other.gameObject.GetComponent<Rabbit>();
-        List<Egg> eggs = rabbit.GetEgg();
+        List<Egg> eggs = rabbit.GetEggs();
         GameManager gameManager = GameManager.Instance;
         gameManager.eggCount += eggs.Count;
         eggs.Clear();

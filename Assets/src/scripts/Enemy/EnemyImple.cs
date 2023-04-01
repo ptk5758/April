@@ -21,7 +21,7 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     protected virtual void Awake()
     {
         rabbit = Rabbit.Instance;
-        target = rabbit.transform;
+        target = rabbit.GetTransform();
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();        
     }
 
