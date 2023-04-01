@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         StartCoroutine(FollowTarget());
-        Debug.Log(Vector3.Distance(transform.position, Target.transform.position));
+        // Debug.Log(Vector3.Distance(transform.position, Target.transform.position));
     }
 
     private IEnumerator FollowTarget()
