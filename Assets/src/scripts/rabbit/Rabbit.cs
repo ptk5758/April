@@ -7,8 +7,22 @@ public interface Rabbit
 {
     public void OnHit(Enemy enemy);
     public Item NearItem { get; set; }
-    public static Rabbit Instance { get; }
     public Transform GetTransform();
     public void DropEgg();
-    public List<Egg> GetEggs();    
+    public List<Egg> GetEggs();
+    public static Rabbit instance;
+    public static Rabbit Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                var obj = GameObject.FindObjectOfType<RabbitImple>();
+                if (obj != null)
+                    instance = obj;
+            }
+            return instance;
+        }
+        private set { instance = value; }
+    }
 }

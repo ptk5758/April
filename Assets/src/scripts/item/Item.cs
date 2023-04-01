@@ -10,10 +10,6 @@ public abstract class Item : MonoBehaviour, IItem
         ACTIVE,
         PASSIVE
     }
-
-    /**
-     * private
-     * */
     private Rabbit rabbit;
     public Type type;
     public abstract void SetType(); // Awake call to this method

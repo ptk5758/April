@@ -4,57 +4,39 @@ using UnityEngine;
 
 public abstract class RabbitImple : MonoBehaviour, Rabbit
 {
-    private static Rabbit instance;
-    public static Rabbit Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                var obj = FindObjectOfType<RabbitImple>();
-                if (obj != null)
-                    instance = obj;                
-            }
-            return instance;
-        }
-        private set { instance = value; }
-    }
+    
     [Header("Favorite Variable")]
     private GameManager gameManager;
 
     [Header("Attribute Variable")]
     public float speed = 1; // Rabbit Move Speed
 
-
     [field:SerializeField]
     public Item NearItem { get; set; } // Rabbit detect to near item
     private Item lastNearItem = null;
+
     [field:SerializeField]
     public Item Item { get; set; } // Rabbit have item
+
     [SerializeField]
-    private List<Egg> carryEgg; // Rabbit Carry Egg
+    private List<Egg> carryEgg = new List<Egg>(); // Rabbit Carry Egg
     public float eggWeight; // egg weight 
     private float _speed; // Actual Applied Speed
 
     [field:SerializeField]
-    public Vector3 spawnPoint { get; set; } // Rabbit spawn Point
-
+    public Vector3 SpawnPoint { get; set; } // Rabbit spawn Point    
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-        
+        if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject);
+        else Rabbit.instance = this;
         DontDestroyOnLoad(gameObject);
+        AwakeInit();
+    }
+    private void AwakeInit() 
+    {
         gameManager = GameManager.Instance;
-        carryEgg = new List<Egg>();
-        spawnPoint = transform.position;
+        SpawnPoint = transform.position;
     }
     private void Update()
     {
@@ -70,6 +52,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         gameManager.HandleItemPickUp(false);
     }
+
     private void FixedUpdate()
     {
         Moving();
@@ -85,10 +68,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     public void PickUpItem() // pick up to near Item
     {
         if (NearItem == null) return;
-        if (NearItem.type == Item.Type.EGG)
-        {
-            PickUpEgg(NearItem);
-        }
+        if (NearItem.type == Item.Type.EGG) PickUpEgg(NearItem);
     }
 
     private void PickUpEgg(Item item)
@@ -116,7 +96,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     public void Spawn()
     {
-        gameObject.transform.position = spawnPoint;
+        gameObject.transform.position = SpawnPoint;
     }
 
     public Transform GetTransform() {
