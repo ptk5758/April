@@ -8,22 +8,19 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyMovement : MonoBehaviour
 {
     
-    private GameObject Target;
+    private Transform Target;
     public float UpdateSpeed = 0.1f;
-    private Rabbit rabbit;
-
     private NavMeshAgent Agent;
 
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
-        rabbit = Rabbit.Instance;
+        Target = Rabbit.Instance.transform;
     }
 
     private void Start()
     {
         StartCoroutine(FollowTarget());
-        // Debug.Log(Vector3.Distance(transform.position, Target.transform.position));
     }
 
     private IEnumerator FollowTarget()
@@ -32,31 +29,17 @@ public class EnemyMovement : MonoBehaviour
 
         while (enabled)
         {
-            if (Vector3.Distance(transform.position, Target.transform.position) < 10) {
+            if (Vector3.Distance(transform.position, Target.position) < 10) {
                 Agent.speed = 3.5f;
                 Agent.SetDestination(Target.transform.position);
-                Debug.Log("!");
-            } else if (Vector3.Distance(transform.position, Target.transform.position) < 15) {
+            } else if (Vector3.Distance(transform.position, Target.position) < 15) {
                 Agent.speed = 3.5f;
                 Agent.SetDestination(Target.transform.position);
-                Debug.Log("?");
             }
             else
             {
                 Agent.speed = 0f;
             }
-            /*
-            if(Vector3.Distance(transform.position, Target.transform.position)<15)
-            {
-                Agent.speed = 3.5f;
-                Agent.SetDestination(Target.transform.position);
-                Debug.Log("?");
-            }
-            else
-            {
-                Agent.speed = 0f;
-            }
-            */
             yield return wait;
         }
     }
@@ -67,9 +50,5 @@ public class EnemyMovement : MonoBehaviour
         Rabbit rabbit = collision.gameObject.GetComponent<Rabbit>(); // find Rabbit instance
         rabbit.DropEgg(); // Rabbit Carry Egg Clear
         rabbit.OnHit(this); // Rabbit OnHit Call
-    }
-    public void TargetSet(GameObject Target)
-    {
-        this.Target = Target;
     }
 }
