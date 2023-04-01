@@ -98,7 +98,7 @@ public abstract class Rabbit : MonoBehaviour, IRabbit
         item.gameObject.SetActive(false);
     }
 
-    public void OnHit(Enemy enemy)
+    public void OnHit(EnemyMovement enemy)
     {
         Debug.Log("On Hit");
         Spawn();

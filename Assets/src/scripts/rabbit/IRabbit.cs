@@ -1,4 +1,4 @@
 public interface IRabbit
 {
-    public void OnHit(Enemy enemy);
+    public void OnHit(EnemyMovement enemy);
 }
