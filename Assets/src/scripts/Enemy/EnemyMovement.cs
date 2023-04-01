@@ -16,7 +16,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        Agent = GetComponent<NavMeshAgent>();  
+        Agent = GetComponent<NavMeshAgent>();
+        rabbit = Rabbit.Instance;
     }
 
     private void Start()
@@ -31,6 +32,20 @@ public class EnemyMovement : MonoBehaviour
 
         while (enabled)
         {
+            if (Vector3.Distance(transform.position, Target.transform.position) < 10) {
+                Agent.speed = 3.5f;
+                Agent.SetDestination(Target.transform.position);
+                Debug.Log("!");
+            } else if (Vector3.Distance(transform.position, Target.transform.position) < 15) {
+                Agent.speed = 3.5f;
+                Agent.SetDestination(Target.transform.position);
+                Debug.Log("?");
+            }
+            else
+            {
+                Agent.speed = 0f;
+            }
+            /*
             if(Vector3.Distance(transform.position, Target.transform.position)<15)
             {
                 Agent.speed = 3.5f;
@@ -41,6 +56,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 Agent.speed = 0f;
             }
+            */
             yield return wait;
         }
     }

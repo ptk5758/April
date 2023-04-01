@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class FoxSpawner : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] 
     private GameObject Target;
-    [SerializeField]
+    [SerializeField] 
     private GameObject foxPrefab; //여우 프리팹
-    [SerializeField]
+    [SerializeField] 
     private Transform[] foxPoints; //여우 생성될 여우의 포인트 정보
+    public Transform foxSpawnGroup; // <- 하위로 오브젝트 생성
 
-    private void Awake()
-    {
-        SpawnFox(); //게임 시작시 여우 스폰함수 추후 if문으로 처리 해야함
-    }
-
-    private void SpawnFox()
-    {
-        
-        GameObject firstFox = Instantiate(foxPrefab);
+    public void SpawnFox()
+    {        
+        GameObject firstFox = Instantiate(foxPrefab, foxSpawnGroup);
         Fox fox = firstFox.GetComponent<Fox>();
-
         fox.Setup(foxPoints, Target);
     }
 }
