@@ -26,10 +26,11 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     }
 
     private void Update()
-    {        
-        SetMoving(isMove);
-        if (status == Status.MOVE)
-            navMeshAgent.SetDestination(target.position);
+    {
+        navMeshAgent.SetDestination(target.position);
+        // SetMoving(isMove);
+        // if (status == Status.MOVE)
+
     }
 
     private void SetMoving(bool value)
