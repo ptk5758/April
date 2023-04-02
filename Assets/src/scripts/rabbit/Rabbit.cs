@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public interface Rabbit
 {
-    public void OnHit(Enemy enemy);
-    public Item NearItem { get; set; }
-    public Transform GetTransform();
-    public void DropEgg();
-    public List<Egg> GetEggs();
     public static Rabbit instance;
     public static Rabbit Instance
     {
@@ -25,4 +20,10 @@ public interface Rabbit
         }
         private set { instance = value; }
     }
+    public void OnHit(Enemy enemy);
+    public void DropEgg();
+    public Transform GetTransform();
+    public Item NearItem { get; set; }
+    public List<Egg> GetEggs();
+    
 }

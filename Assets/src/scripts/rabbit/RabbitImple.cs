@@ -40,12 +40,20 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     }
     private void Update()
     {
-        _speed = speed - eggWeight * carryEgg.Count;
+        CalculateSpeed();
+        ItemHandler();
+    }
+    private void ItemHandler()
+    {
         if (lastNearItem != NearItem)
         {
             lastNearItem = NearItem;
             gameManager.HandleItemPickUp(lastNearItem != null);
         }
+    }
+    private void CalculateSpeed() 
+    {
+        _speed = speed - eggWeight * carryEgg.Count;
     }
 
     private void Start()
