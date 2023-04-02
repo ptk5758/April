@@ -22,7 +22,7 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     {
         rabbit = Rabbit.Instance;
         target = rabbit.GetTransform();
-        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();        
+        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     private void Update()

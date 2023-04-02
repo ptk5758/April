@@ -49,6 +49,6 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag != "Player") return;
         Rabbit rabbit = collision.gameObject.GetComponent<Rabbit>(); // find Rabbit instance
         rabbit.DropEgg(); // Rabbit Carry Egg Clear
-        // rabbit.OnHit(this); // Rabbit OnHit Call
+        rabbit.OnHit(this.gameObject.GetComponent<Enemy>()); // Rabbit OnHit Call
     }
 }
