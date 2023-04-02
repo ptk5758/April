@@ -13,10 +13,8 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     private Transform target;
     public NavMeshAgent navMeshAgent;
     private Rabbit rabbit;
-
     public float speed = 1;
-    public bool isMove;
-    public Status status;
+    public Status status = Status.STOP;
 
     protected virtual void Awake()
     {
@@ -27,24 +25,26 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
 
     private void Update()
     {
-        navMeshAgent.SetDestination(target.position);
-        // SetMoving(isMove);
-        // if (status == Status.MOVE)
-
+        ActionListener();
     }
 
-    private void SetMoving(bool value)
+    private void ActionListener() {
+        if (status == Status.MOVE) DoMove();
+        if (status == Status.STOP) DoStop();
+    }
+
+    private void LateUpdate()
     {
-        if (value)
-        {
-            navMeshAgent.speed = this.speed;
-            this.status = Status.MOVE;
-        }
-        else
-        {
-            navMeshAgent.speed = 0;
-            this.status = Status.STOP;
-        }
+        navMeshAgent.SetDestination(target.position);
+    }
+
+    private void DoMove() {
+        this.status = Status.MOVE;
+        navMeshAgent.speed = 1; // 하드코딩
+    }
+    private void DoStop() {
+        this.status = Status.STOP;
+        navMeshAgent.speed = 0f;
     }
 
     private void OnCollisionEnter(Collision collision)
