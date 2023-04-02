@@ -5,22 +5,11 @@ using UnityEngine.AI;
 
 public abstract class EnemyImple : MonoBehaviour, Enemy
 {
-    public enum Status { 
-        MOVE,
-        STOP,
-        WARNING
-    }
-    public enum Range { 
-        SHORTS = 5, // 근접 , 중거리, 원거리
-        MIDDLE = 10,
-        FAR = 15
-    }
-
     private Transform target;
     public NavMeshAgent navMeshAgent;
     private Rabbit rabbit;
     public float speed = 1;
-    public Status status = Status.STOP;
+    public Enemy.Status status = Enemy.Status.STOP;
 
     protected virtual void Awake()
     {
@@ -37,15 +26,15 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
 
     private void RabbitDetectListener() {
         float range = Vector3.Distance(transform.position, target.position);
-        if (range > (int)Range.FAR) status = Status.STOP;
-        else if (range > (int)Range.MIDDLE) status = Status.WARNING;
-        else if (range > (int)Range.SHORTS) status = Status.MOVE;
+        if (range > (int) Enemy.Range.FAR) status = Enemy.Status.STOP;
+        else if (range > (int) Enemy.Range.MIDDLE) status = Enemy.Status.WARNING;
+        else if (range > (int) Enemy.Range.SHORTS) status = Enemy.Status.MOVE;
         // this.status = range > (int)Range.FAR ? Status.STOP : range > (int)Range.MIDDLE ? Status.WARNING : Status.MOVE;
     }
 
     private void ActionListener() {
-        if (status == Status.MOVE) DoMove();
-        if (status == Status.STOP) DoStop();
+        if (status == Enemy.Status.MOVE) DoMove();
+        if (status == Enemy.Status.STOP) DoStop();
     }
 
     private void LateUpdate()
@@ -54,11 +43,11 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     }
 
     private void DoMove() {
-        this.status = Status.MOVE;
+        this.status = Enemy.Status.MOVE;
         navMeshAgent.speed = 1; // 하드코딩
     }
     private void DoStop() {
-        this.status = Status.STOP;
+        this.status = Enemy.Status.STOP;
         navMeshAgent.speed = 0f;
     }
 
