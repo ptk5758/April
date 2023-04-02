@@ -26,4 +26,5 @@ public interface Rabbit
     public Item NearItem { get; set; }
     public List<Egg> GetEggs();
     
+    
 }

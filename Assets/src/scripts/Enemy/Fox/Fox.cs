@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fox : EnemyImple
+public class Fox : MonoBehaviour
 {
-    public System.Action rangeHandle;
-    protected override void Awake()
-    {
-        base.Awake();
-        rangeHandle += OnRangeEnter;
-    }
+    private int foxPointCount; //여우의 포인트 개수
+    private Transform[] foxPoints;// 여우포인트 정보
+    private int currentIndex = 0;//목표인덱스
 
-    public void OnRangeEnter()
+    private EnemyMovement enemyMovement;    
+    private void Awake()
     {
-        isMove = true;
-        Debug.Log("Enter!!!!");
+        enemyMovement = GetComponent<EnemyMovement>();
     }
-    
 }
