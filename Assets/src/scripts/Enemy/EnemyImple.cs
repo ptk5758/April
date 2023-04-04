@@ -5,16 +5,18 @@ using UnityEngine.AI;
 
 public abstract class EnemyImple : MonoBehaviour, Enemy
 {
-    private Transform target;
+    private Vector3 target;
     public NavMeshAgent navMeshAgent;
     private Rabbit rabbit;
     public float speed = 1;
     public Enemy.Status status = Enemy.Status.STOP;
+    public Vector3 HomePosition;
 
     protected virtual void Awake()
     {
         rabbit = Rabbit.Instance;
-        target = rabbit.GetTransform();
+        target = rabbit.GetTransform().position;
+        HomePosition = transform.position;
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
     }
 
@@ -25,7 +27,7 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
     }
 
     private void RabbitDetectListener() {
-        float range = Vector3.Distance(transform.position, target.position);
+        float range = Vector3.Distance(transform.position, rabbit.GetTransform().position);
         if (range > (int) Enemy.Range.FAR) status = Enemy.Status.STOP;
         else if (range > (int) Enemy.Range.MIDDLE) status = Enemy.Status.WARNING;
         else if (range > (int) Enemy.Range.SHORTS) status = Enemy.Status.MOVE;
@@ -39,16 +41,17 @@ public abstract class EnemyImple : MonoBehaviour, Enemy
 
     private void LateUpdate()
     {
-        navMeshAgent.SetDestination(target.position);
+        navMeshAgent.SetDestination(target);
     }
 
     private void DoMove() {
-        this.status = Enemy.Status.MOVE;
-        navMeshAgent.speed = 1; // 하드코딩
+        navMeshAgent.speed = 1f; // 하드코딩
+        target = rabbit.GetTransform().position;
     }
     private void DoStop() {
-        this.status = Enemy.Status.STOP;
-        navMeshAgent.speed = 0f;
+        navMeshAgent.speed = 1f;
+        Debug.Log(HomePosition);
+        target = HomePosition;
     }
 
     private void OnCollisionEnter(Collision collision)
