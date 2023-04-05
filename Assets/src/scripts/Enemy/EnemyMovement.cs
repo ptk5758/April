@@ -7,18 +7,21 @@ using static UnityEngine.GraphicsBuffer;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMovement : MonoBehaviour
 {
-    
-    private Transform Target;
+
+    private Vector3 target;
     public float UpdateSpeed = 0.1f;
     private NavMeshAgent Agent;
+    private Rabbit rabbit;
     public float range;
     public Transform centrePoint;
     public Vector3 HomePosition;
 
     private void Awake()
     {
+        rabbit = Rabbit.Instance;
+        target = rabbit.GetTransform().position;
+        HomePosition = transform.position;
         Agent = GetComponent<NavMeshAgent>();
-        Target = Rabbit.Instance.GetTransform();
     }
 
     private void Start()
@@ -32,12 +35,26 @@ public class EnemyMovement : MonoBehaviour
 
         while (enabled)
         {
-            if (Vector3.Distance(transform.position, Target.position) < 10) {
+            if (Vector3.Distance(transform.position, rabbit.GetTransform().position) < 10)
+            {
                 Agent.speed = 3.5f;
-                Agent.SetDestination(Target.transform.position);
-            } else if (Vector3.Distance(transform.position, Target.position) < 15) {
+                Agent.SetDestination(rabbit.GetTransform().transform.position);
+                Debug.Log("!");
+            }
+            else if (Vector3.Distance(transform.position, rabbit.GetTransform().position) < 15)
+            {
                 Agent.speed = 3.5f;
-                Agent.SetDestination(Target.transform.position);
+                Agent.SetDestination(rabbit.GetTransform().transform.position);
+                Debug.Log("?");
+            }
+            else if (Vector3.Distance(transform.position, rabbit.GetTransform().position) < 16)
+            {
+                target = HomePosition;
+                Agent.SetDestination(target);
+            }
+            else if (Vector3.Distance(transform.position, rabbit.GetTransform().position) > 20)
+            {
+                DoPatrol();
             }
             else
             {
@@ -58,7 +75,6 @@ public class EnemyMovement : MonoBehaviour
                 Agent.SetDestination(point);
             }
         }
-        Debug.Log("X");
     }
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -80,6 +96,6 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag != "Player") return;
         Rabbit rabbit = collision.gameObject.GetComponent<Rabbit>(); // find Rabbit instance
         rabbit.DropEgg(); // Rabbit Carry Egg Clear
-        rabbit.OnHit(this.gameObject.GetComponent<Enemy>()); // Rabbit OnHit Call
+        rabbit.OnHit(this.gameObject.GetComponent<Fox>()); // Rabbit OnHit Call
     }
 }

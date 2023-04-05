@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2733925138461140793}
   - component: {fileID: 84424529652967633}
   - component: {fileID: 2112273416}
-  - component: {fileID: -5896428562526802732}
+  - component: {fileID: 1043429261728092903}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -138,7 +138,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-5896428562526802732
+--- !u!114 &1043429261728092903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,12 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2733925138461140794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab3eb37ea956744dac301a72930c06f, type: 3}
+  m_Script: {fileID: 11500000, guid: bb5706c403c91714fb9fabc1c4757cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
-  speed: 1
-  status: 1
-  HomePosition: {x: 0, y: 0, z: 0}
+  UpdateSpeed: 0.1
   range: 5
   centrePoint: {fileID: 2733925138461140774}
+  HomePosition: {x: 0, y: 0, z: 0}

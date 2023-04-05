@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 93
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 21
+  controlID: 94
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22
+  controlID: 95
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 5.442932, y: 13.226616, z: -44.309334}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 5.442932, y: 13.226616, z: -44.309334}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -707,11 +707,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.13767862, y: -0.7670183, z: 0.17555965, w: -0.60158616}
     speed: 2
-    m_Value: {x: -0.22353223, y: -0.604829, z: 0.18214682, w: -0.74231917}
+    m_Value: {x: 0.13767862, y: 0.7670183, z: -0.17555965, w: 0.60158616}
   m_Size:
-    m_Target: 60.63839
+    m_Target: 75.56646
     speed: 2
-    m_Value: 0.9246621
+    m_Value: 72.3124
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -795,9 +795,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b05c0000
+      m_SelectedIDs: e2130000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7cefffff16f0ffffb0f0ffff52f2ffff96f2ffff36fbffff
+      m_ExpandedIDs: 36fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -862,21 +862,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/src/scripts/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/src/scripts/Enemy
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\develore\\\uAC8C\uC784\uAC1C\uBC1C\\Unity\\April"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 116}
-    m_SelectedIDs: 925b0000
-    m_LastClickedID: 23442
+    m_SelectedIDs: 7a5b0000
+    m_LastClickedID: 23418
     m_ExpandedIDs: 00000000725b0000745b0000765b0000785b00007a5b00007c5b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
