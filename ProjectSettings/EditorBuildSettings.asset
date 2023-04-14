@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/pjw/LoglineTitle/Title.unity
+    guid: 5a5f1eb8bab418244916fb8bc3d0b4dd
+  - enabled: 1
+    path: Assets/Scenes/pjw/LoglineTitle/Logline.unity
+    guid: 7aa2fe16123f5054d82e47461516e346
   m_configObjects: {}
