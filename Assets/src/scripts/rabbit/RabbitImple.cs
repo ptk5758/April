@@ -37,7 +37,8 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         gameManager = GameManager.Instance;
         SpawnPoint = transform.position;
-        speed = 10; // 기본 스피
+        speed = 10; // 기본 스피드
+
     }
     private void Update()
     {
@@ -77,6 +78,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     public void PickUpItem() // pick up to near Item
     {
         // Debug.Log("PickUpItem" + NearItem.type);
+        Debug.Log("Pick Up!!");
         if (NearItem == null) return;
         else if (NearItem.type == Item.Type.EGG) PickUpEgg(NearItem);
         else if (NearItem.type == Item.Type.ACTIVE) PickUpActiveItem();
