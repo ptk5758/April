@@ -11,6 +11,8 @@ public class SpeedAdder : ActiveItem
         rabbit = Rabbit.Instance;
         Debug.Log("이속 증가!");
         StartCoroutine(DoRabbitSpeedUp());
+        GameManager gameManager = GameManager.Instance;
+        gameManager.UseItemListener();
     }
     IEnumerator DoRabbitSpeedUp()
     {
