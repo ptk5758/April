@@ -15,13 +15,21 @@ public class UIManager : MonoBehaviour
     [Header("Button UI")]
     public Image pickUpButton;
 
+    [Header("Active Item")]
+    public GameObject activeItem;
+
     private void Awake()
     {
         UIMap = new Dictionary<Type, Text>();
         UIMap.Add(Type.PLAY_TIME, playTimeUI);
         UIMap.Add(Type.EGG_COUNT, eggCountUI);
     }
-    
+
+    private void Start()
+    {
+        activeItem.SetActive(false);
+    }
+
     public void SetUIText(Type type, string text)
     {
         UIMap[type].text = text;
@@ -42,5 +50,10 @@ public class UIManager : MonoBehaviour
             pickUpButton.color = temp;
         }
 
+    }
+
+    public void SetAbledToActiveItemButton(bool status)
+    {
+        activeItem.SetActive(status);
     }
 }

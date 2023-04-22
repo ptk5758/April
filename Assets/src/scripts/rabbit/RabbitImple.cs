@@ -75,8 +75,15 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     public void PickUpItem() // pick up to near Item
     {
+        // Debug.Log("PickUpItem" + NearItem.type);
         if (NearItem == null) return;
-        if (NearItem.type == Item.Type.EGG) PickUpEgg(NearItem);
+        else if (NearItem.type == Item.Type.EGG) PickUpEgg(NearItem);
+        else if (NearItem.type == Item.Type.ACTIVE) PickUpActiveItem();
+    }
+    private void PickUpActiveItem()
+    {
+        this.Item = NearItem;
+        gameManager.SetActiveItem(this.Item);
     }
 
     private void PickUpEgg(Item item)

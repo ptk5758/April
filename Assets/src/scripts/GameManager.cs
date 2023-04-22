@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
     public int eggCount { set; get; }
 
     [Header("Favorite Variable")]
-    public UIManager uiManager;   
+    public UIManager uiManager;
+
+    private Item item;
 
     private void Update()
     {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         int s = (int)playTime % 60;
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
         uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
+        uiManager.SetAbledToActiveItemButton(item != null);
     }
 
     private void Awake()
@@ -61,5 +64,10 @@ public class GameManager : MonoBehaviour
     public void HandleItemPickUp(bool status)
     {
         uiManager.SetAbleToPickUpButton(status);
+    }
+    public void SetActiveItem(Item item)
+    {
+        this.item = item;
+        // uiManager.SetAbledToActiveItemButton();
     }
 }
