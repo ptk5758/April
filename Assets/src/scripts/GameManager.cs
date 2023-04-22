@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     [Header("Favorite Variable")]
     public UIManager uiManager;
 
-    private Item item;
+    private ActiveItem activeAtem;
 
     private void Update()
     {
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         int s = (int)playTime % 60;
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
         uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
-        uiManager.SetAbledToActiveItemButton(item != null);
+        // uiManager.SetAbledToActiveItemButton(activeAtem != null);
     }
 
     private void Awake()
@@ -65,9 +65,10 @@ public class GameManager : MonoBehaviour
     {
         uiManager.SetAbleToPickUpButton(status);
     }
-    public void SetActiveItem(Item item)
+    public void SetActiveItem(ActiveItem item)
     {
-        this.item = item;
+        this.activeAtem = item;
+        uiManager.SetActiveItemButton(item);
         // uiManager.SetAbledToActiveItemButton();
     }
 }

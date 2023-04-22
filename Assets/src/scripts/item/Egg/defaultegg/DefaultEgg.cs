@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DefaultEgg : Egg
 {
-    public override void OnUseItem(Rabbit rabbit)
+    public override void OnUseItem()
     {        
         Destroy(gameObject);        
     }

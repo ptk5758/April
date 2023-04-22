@@ -83,7 +83,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     private void PickUpActiveItem()
     {
         this.Item = NearItem;
-        gameManager.SetActiveItem(this.Item);
+        gameManager.SetActiveItem((ActiveItem)this.Item);
     }
 
     private void PickUpEgg(Item item)
