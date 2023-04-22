@@ -54,8 +54,18 @@ public class UIManager : MonoBehaviour
 
     public void SetActiveItemButton(ActiveItem item)
     {
-        activeItem.SetActive(true);
+        
         Button btn = activeItem.GetComponent<Button>();
-        btn.onClick.AddListener(item.OnUseItem);
+        if (item == null)
+        {
+            btn.onClick.RemoveAllListeners();
+            activeItem.SetActive(false);
+        }
+        else
+        {
+            btn.onClick.AddListener(item.OnUseItem);
+            activeItem.SetActive(true);
+        }
+        
     }
 }

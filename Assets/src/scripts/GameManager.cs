@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     public Rabbit player;
 
     [field:SerializeField]
-    public float playTime { private set; get; }
+    public float playTime { set; get; }
     public int eggCount { set; get; }
 
     [Header("Favorite Variable")]
@@ -71,4 +72,10 @@ public class GameManager : MonoBehaviour
         uiManager.SetActiveItemButton(item);
         // uiManager.SetAbledToActiveItemButton();
     }
+    public void UseItemListener()
+    {
+        this.activeAtem = null;
+        uiManager.SetActiveItemButton(this.activeAtem);
+    }
 }
+
