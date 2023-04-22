@@ -4,12 +4,12 @@ using UnityEngine;
 
 public abstract class RabbitImple : MonoBehaviour, Rabbit
 {
-    
+
     [Header("Favorite Variable")]
     private GameManager gameManager;
 
-    [Header("Attribute Variable")]
-    public float speed = 1; // Rabbit Move Speed
+    // [Header("Attribute Variable")]
+    public float speed { get; set; } // Rabbit Move Speed
 
     [field:SerializeField]
     public Item NearItem { get; set; } // Rabbit detect to near item
@@ -37,6 +37,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         gameManager = GameManager.Instance;
         SpawnPoint = transform.position;
+        speed = 10; // 기본 스피
     }
     private void Update()
     {

@@ -25,6 +25,7 @@ public interface Rabbit
     public Transform GetTransform();
     public Item NearItem { get; set; }
     public List<Egg> GetEggs();
+    public float speed { get; set; }
     
     
 }
