@@ -1,4 +1,4 @@
 public interface IItem
 {
-    public void OnUseItem(Rabbit rabbit);
+    public void OnUseItem();
 }
