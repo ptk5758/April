@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
     [Header("Favorite Variable")]
     public UIManager uiManager;
 
-    private ActiveItem activeAtem;
-
     private void Update()
     {
         playTime -= Time.deltaTime;
@@ -65,17 +63,7 @@ public class GameManager : MonoBehaviour
     public void HandleItemPickUp(bool status)
     {
         uiManager.SetAbleToPickUpButton(status);
-    }
-    public void SetActiveItem(ActiveItem item)
-    {
-        this.activeAtem = item;
-        uiManager.SetActiveItemButton(item);
-        // uiManager.SetAbledToActiveItemButton();
-    }
-    public void UseItemListener()
-    {
-        this.activeAtem = null;
-        uiManager.SetActiveItemButton(this.activeAtem);
-    }
+    }   
+    
 }
 

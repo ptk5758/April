@@ -7,24 +7,12 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     [Header("Favorite Variable")]
     private GameManager gameManager;
-
-    // [Header("Attribute Variable")]
-    public float speed { get; set; } // Rabbit Move Speed
-
-    [field:SerializeField]
-    public Item NearItem { get; set; } // Rabbit detect to near item
-    private Item lastNearItem = null;
+    public float speed { get; set; } 
+    public float eggWeight; 
+    private float _speed;
 
     [field:SerializeField]
-    public Item Item { get; set; } // Rabbit have item
-
-    [SerializeField]
-    private List<Egg> carryEgg = new List<Egg>(); // Rabbit Carry Egg
-    public float eggWeight; // egg weight 
-    private float _speed; // Actual Applied Speed
-
-    [field:SerializeField]
-    public Vector3 SpawnPoint { get; set; } // Rabbit spawn Point    
+    public Vector3 SpawnPoint { get; set; }
 
     private void Awake()
     {
@@ -43,19 +31,10 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     private void Update()
     {
         CalculateSpeed();
-        ItemHandler();
-    }
-    private void ItemHandler()
-    {
-        if (lastNearItem != NearItem)
-        {
-            lastNearItem = NearItem;
-            gameManager.HandleItemPickUp(lastNearItem != null);
-        }
-    }
+    }    
     private void CalculateSpeed() 
     {
-        _speed = speed - eggWeight * carryEgg.Count;
+        _speed = speed;
     }
 
     private void Start()
@@ -75,41 +54,9 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
     }
 
-    public void PickUpItem() // pick up to near Item
-    {
-        // Debug.Log("PickUpItem" + NearItem.type);
-        Debug.Log("Pick Up!!");
-        if (NearItem == null) return;
-        else if (NearItem.type == Item.Type.EGG) PickUpEgg(NearItem);
-        else if (NearItem.type == Item.Type.ACTIVE) PickUpActiveItem();
-    }
-    private void PickUpActiveItem()
-    {
-        this.Item = NearItem;
-        gameManager.SetActiveItem((ActiveItem)this.Item);
-    }
-
-    private void PickUpEgg(Item item)
-    {
-        carryEgg.Add((Egg) item);
-        NearItem = null;
-        item.gameObject.SetActive(false);
-    }
-
     public void OnHit(Fox fox)
     {
-        Debug.Log("On Hit");
         Spawn();
-    }
-
-    public List<Egg> GetEggs()
-    {
-        return carryEgg;
-    }
-
-    public void DropEgg()
-    {
-        carryEgg.Clear();
     }
 
     public void Spawn()

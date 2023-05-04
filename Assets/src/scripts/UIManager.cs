@@ -50,22 +50,5 @@ public class UIManager : MonoBehaviour
             pickUpButton.color = temp;
         }
 
-    }
-
-    public void SetActiveItemButton(ActiveItem item)
-    {
-        
-        Button btn = activeItem.GetComponent<Button>();
-        if (item == null)
-        {
-            btn.onClick.RemoveAllListeners();
-            activeItem.SetActive(false);
-        }
-        else
-        {
-            btn.onClick.AddListener(item.OnUseItem);
-            activeItem.SetActive(true);
-        }
-        
-    }
+    }   
 }

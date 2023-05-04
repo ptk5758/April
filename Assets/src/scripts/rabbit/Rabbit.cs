@@ -21,10 +21,7 @@ public interface Rabbit
         private set { instance = value; }
     }
     public void OnHit(Fox fox);
-    public void DropEgg();
-    public Transform GetTransform();
-    public Item NearItem { get; set; }
-    public List<Egg> GetEggs();
+    public Transform GetTransform();    
     public float speed { get; set; }
     
     
