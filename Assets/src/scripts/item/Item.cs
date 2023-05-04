@@ -10,10 +10,6 @@ public abstract class Item : MonoBehaviour, IItem
         ACTIVE,
         PASSIVE
     }
-
-    /**
-     * private
-     * */
     private Rabbit rabbit;
     public Type type;
     public abstract void SetType(); // Awake call to this method
@@ -33,7 +29,7 @@ public abstract class Item : MonoBehaviour, IItem
                 rabbit.NearItem = null;
         }
     }
-    public abstract void OnUseItem(Rabbit rabbit); // extend the using item
+    public abstract void OnUseItem(); // extend the using item
 
     private void Awake() // init method
     {

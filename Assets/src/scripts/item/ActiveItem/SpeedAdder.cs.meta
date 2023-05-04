@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/src/scripts/Enemy/EnemyImple.cs.meta
 guid: 8035df5a183541c4f80d75031724b616
+=======
+guid: 74fd1ddb81d6d4323acac07214f1bb9b
+>>>>>>> c5e90cb0a401d0df31ac6dea76847bc2928c608a:Assets/src/scripts/item/ActiveItem/SpeedAdder.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

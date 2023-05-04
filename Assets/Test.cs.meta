@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/src/scripts/Enemy/Enemy.cs.meta
+guid: 9ecb5f37ce753c64e86f44a48aa66a5e
+=======
+guid: e5ba82632ebeecb49b85577d96cdd09a
+>>>>>>> c5e90cb0a401d0df31ac6dea76847bc2928c608a:Assets/Test.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
