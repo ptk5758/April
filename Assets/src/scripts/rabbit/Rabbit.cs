@@ -33,6 +33,11 @@ public interface Rabbit
     /// 토끼가 감지하고있는 아이템
     /// </summary>
     public ItemDefault DetectItem { get; set; }
-    
-    
+
+    /// <summary>
+    /// 현재 토끼가 가지고있는 아이템
+    /// </summary>
+    public ItemDefault CurrentItem { get; set; }
+
+
 }

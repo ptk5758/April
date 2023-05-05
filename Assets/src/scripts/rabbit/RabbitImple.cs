@@ -10,10 +10,10 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     public float speed { get; set; } // 스피드 스텟 이거로 속도 조정함
     private float _speed; // 실제로 적용돼는 스피드
 
-    [field:SerializeField]
-    public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
-    [field:SerializeField]
-    public ItemDefault DetectItem { get; set; }
+    [field:SerializeField] public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
+    [field:SerializeField] public ItemDefault DetectItem { get; set; }
+    [field:SerializeField] public ItemDefault CurrentItem { get; set; }
+
 
     private void Awake()
     {
@@ -67,6 +67,13 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     public Transform GetTransform() {
         return this.transform;
+    }
+
+    public void PickUpItem() {
+        if (DetectItem == null) return;
+        CurrentItem = DetectItem;
+        DetectItem.gameObject.SetActive(false);
+        DetectItem = null;        
     }
     
     
