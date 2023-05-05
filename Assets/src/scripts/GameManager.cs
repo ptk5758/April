@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject itemArea;
-    public Rabbit player;
+    private Rabbit rabbit;
 
     [field:SerializeField]
     public float playTime { set; get; }
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         int s = (int)playTime % 60;
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
         uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
-        // uiManager.SetAbledToActiveItemButton(activeAtem != null);
+        uiManager.SetAbleToPickUpButton(rabbit.DetectItem != null);
     }
 
     private void Awake()
@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
+        InitVariable();
+    }
+    private void InitVariable()
+    {
+        rabbit = Rabbit.Instance;
     }
 
     public void HandleItemPickUp(bool status)
