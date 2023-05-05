@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EggDefault : ItemImple, Egg
+public class EggDefault : ItemDefault, Egg
 {
 
 }

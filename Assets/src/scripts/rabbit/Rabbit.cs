@@ -22,7 +22,17 @@ public interface Rabbit
     }
     public void OnHit(Fox fox);
     public Transform GetTransform();    
+
+    /// <summary>
+    /// 토끼 스피드
+    /// </summary>
     public float speed { get; set; }
+
+
+    /// <summary>
+    /// 토끼가 감지하고있는 아이템
+    /// </summary>
+    public ItemDefault DetectItem { get; set; }
     
     
 }

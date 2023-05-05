@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemImple : MonoBehaviour, Item
+public abstract class ItemDefault : MonoBehaviour, Item
 {
     [SerializeField] private ItemType type;
     private void InitType()
@@ -24,11 +24,15 @@ public abstract class ItemImple : MonoBehaviour, Item
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Enter!");
+        if (other.gameObject.tag != "Player") return;
+        Rabbit rabbit = other.GetComponent<Rabbit>();
+        rabbit.DetectItem = this;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Trigger Exit");
+        if (other.gameObject.tag != "Player") return;
+        Rabbit rabbit = other.GetComponent<Rabbit>();
+        rabbit.DetectItem = null;
     }
 }

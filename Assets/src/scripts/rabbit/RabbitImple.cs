@@ -12,8 +12,9 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     [field:SerializeField]
     public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
+    [field:SerializeField]
+    public ItemDefault DetectItem { get; set; }
 
-    public Item nearItem; // 토끼 근처의 아이템
     private void Awake()
     {
         if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject);

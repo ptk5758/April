@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 4247679672776529105}
   - component: {fileID: 4429417043531625276}
   - component: {fileID: 4429417043531625264}
-  - component: {fileID: 4429417043531625265}
+  - component: {fileID: 8016168112523821534}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Player
@@ -704,7 +704,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.46, y: 22.7, z: 12.5}
   m_Center: {x: 0, y: 11.17, z: 0}
---- !u!114 &4429417043531625265
+--- !u!114 &8016168112523821534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -716,10 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed619537c9fcd5a46b6aa1f5a8673d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <NearItem>k__BackingField: {fileID: 0}
-  <Item>k__BackingField: {fileID: 0}
-  carryEgg: []
-  eggWeight: 0
   <SpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!1 &3681682909893411932
 GameObject:
