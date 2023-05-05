@@ -7,13 +7,13 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     [Header("Favorite Variable")]
     private GameManager gameManager;
-    public float speed { get; set; } 
-    public float eggWeight; 
-    private float _speed;
+    public float speed { get; set; } // 스피드 스텟 이거로 속도 조정함
+    private float _speed; // 실제로 적용돼는 스피드
 
     [field:SerializeField]
-    public Vector3 SpawnPoint { get; set; }
+    public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
 
+    public Item nearItem; // 토끼 근처의 아이템
     private void Awake()
     {
         if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject);
