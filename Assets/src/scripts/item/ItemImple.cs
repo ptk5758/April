@@ -35,4 +35,8 @@ public abstract class ItemDefault : MonoBehaviour, Item
         Rabbit rabbit = other.GetComponent<Rabbit>();
         rabbit.DetectItem = null;
     }
+    public ItemType GetItemType()
+    {
+        return type;
+    }
 }

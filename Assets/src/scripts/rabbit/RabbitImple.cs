@@ -72,6 +72,19 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     public void PickUpItem() {
         if (DetectItem == null) return;
         PickUpItemAfter();
+        switch (CurrentItem.GetItemType())
+        {
+            case ItemType.EGG:
+                PickUpEgg();
+                break;
+            case ItemType.ITEM:
+                Debug.Log("아이템임");
+                break;
+        }
+    }
+    public void PickUpEgg()
+    {
+        Debug.Log("달걀을 줍는 함수.");
     }
     
     public void PickUpItemAfter()
