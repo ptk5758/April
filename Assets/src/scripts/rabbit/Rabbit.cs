@@ -32,12 +32,18 @@ public interface Rabbit
     /// <summary>
     /// 토끼가 감지하고있는 아이템
     /// </summary>
-    public ItemDefault DetectItem { get; set; }
+    public ItemDefault detectItem { get; set; }
 
     /// <summary>
     /// 현재 토끼가 가지고있는 아이템
     /// </summary>
-    public ItemDefault CurrentItem { get; set; }
+    public ItemDefault currentItem { get; set; }  
+
+    /// <summary>
+    /// 토끼가 가지고있는 Egg 리스트
+    /// </summary>
+    public List<Egg> eggInventory { get; set; }
+    
 
 
 }

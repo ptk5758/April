@@ -11,8 +11,10 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     private float _speed; // 실제로 적용돼는 스피드
 
     [field:SerializeField] public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
-    [field:SerializeField] public ItemDefault DetectItem { get; set; }
-    [field:SerializeField] public ItemDefault CurrentItem { get; set; }
+    [field:SerializeField] public ItemDefault detectItem { get; set; }
+    [field:SerializeField] public ItemDefault currentItem { get; set; }
+
+    public List<Egg> eggInventory { get; set; }
 
 
     private void Awake()
@@ -27,6 +29,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         gameManager = GameManager.Instance;
         SpawnPoint = transform.position;
         speed = 10; // 기본 스피드
+        eggInventory = new List<Egg>();
 
     }
     private void Update()
@@ -70,9 +73,9 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     }
 
     public void PickUpItem() {
-        if (DetectItem == null) return;
+        if (detectItem == null) return;
         PickUpItemAfter();
-        switch (CurrentItem.GetItemType())
+        switch (currentItem.GetItemType())
         {
             case ItemType.EGG:
                 PickUpEgg();
@@ -82,17 +85,41 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
                 break;
         }
     }
+    public void PickUpItemAfter()
+    {
+        currentItem = detectItem;
+        detectItem.gameObject.SetActive(false);
+        detectItem = null;
+    }
+
     public void PickUpEgg()
     {
         Debug.Log("달걀을 줍는 함수.");
+        if(IsPickUpEgg()) {
+            AddEggInventory();
+        } else {
+            Debug.Log("달걀을 주울수 가 없습");
+        }
+    }
+    // 달걀 인벤토리에 계란을 넣는 함수
+    private void AddEggInventory()
+    {
+        eggInventory.Add((Egg) currentItem);
+        Debug.Log("현재 소지중인 Egg Count : " + eggInventory.Count);
+    }
+
+
+    /// <summary>
+    /// 달걀을 들수 있는지 없는지 체크
+    /// </summary>    
+    private bool IsPickUpEgg()
+    {
+        return true;
     }
     
-    public void PickUpItemAfter()
-    {
-        CurrentItem = DetectItem;
-        DetectItem.gameObject.SetActive(false);
-        DetectItem = null;
-    }
+    
+
+
     
     
 }
