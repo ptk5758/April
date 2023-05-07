@@ -22,9 +22,9 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject);
         else Rabbit.instance = this;
         DontDestroyOnLoad(gameObject);
-        AwakeInit();
+        InitializeToAwak();
     }
-    private void AwakeInit() 
+    private void InitializeToAwak() 
     {
         gameManager = GameManager.Instance;
         SpawnPoint = transform.position;
@@ -104,8 +104,9 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     // 달걀 인벤토리에 계란을 넣는 함수
     private void AddEggInventory()
     {
-        eggInventory.Add((Egg) currentItem);
-        Debug.Log("현재 소지중인 Egg Count : " + eggInventory.Count);
+        eggInventory.Add((Egg) currentItem);        
+        currentItem = null;
+        // Debug.Log("현재 소지중인 Egg Count : " + eggInventory.Count);
     }
 
 
