@@ -71,9 +71,14 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     public void PickUpItem() {
         if (DetectItem == null) return;
+        PickUpItemAfter();
+    }
+    
+    public void PickUpItemAfter()
+    {
         CurrentItem = DetectItem;
         DetectItem.gameObject.SetActive(false);
-        DetectItem = null;        
+        DetectItem = null;
     }
     
     
