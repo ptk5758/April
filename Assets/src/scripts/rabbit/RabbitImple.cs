@@ -100,6 +100,23 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         return true;
     }
+
+
+    /// <summary>
+    /// 가지고있는 아이템을 사용하는 함수이다.
+    /// </summary>
+    public void DoUseItem()
+    {
+        if (!IsUseItem()) return;
+        ActiveItem item = (ActiveItem) currentItem;
+        item.UseItem();
+    }
+
+    private bool IsUseItem()
+    {
+        if (currentItem == null) return false;
+        return true;
+    }
     
     
 

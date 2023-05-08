@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
         uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
         uiManager.SetAbleToPickUpButton(Rabbit.isPickUpItem);
+        uiManager.activeItem.SetActive(rabbit.currentItem != null);
     }
 
     private void Awake()
@@ -58,9 +59,9 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
-        InitVariable();
+        InitializeToAwake();
     }
-    private void InitVariable()
+    private void InitializeToAwake()
     {
         rabbit = Rabbit.Instance;
     }
