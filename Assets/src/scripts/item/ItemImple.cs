@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ItemDefault : MonoBehaviour, Item
 {
     [SerializeField] private ItemType type;
-    private void InitType()
+    private void InitializeType()
     {
         switch (this.GetType().Name)
         {
@@ -19,7 +19,7 @@ public abstract class ItemDefault : MonoBehaviour, Item
     }
     private void Awake()
     {
-        InitType();
+        InitializeType();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +27,7 @@ public abstract class ItemDefault : MonoBehaviour, Item
         if (other.gameObject.tag != "Player") return;
         Rabbit rabbit = other.GetComponent<Rabbit>();
         rabbit.itemHandler.SetDetectItem(this);
+        Rabbit.isPickUpItem = true;
     }
 
     private void OnTriggerExit(Collider other)
@@ -34,6 +35,7 @@ public abstract class ItemDefault : MonoBehaviour, Item
         if (other.gameObject.tag != "Player") return;
         Rabbit rabbit = other.GetComponent<Rabbit>();
         rabbit.itemHandler.SetDetectItem(null);
+        Rabbit.isPickUpItem = false;
     }
     public ItemType GetItemType()
     {

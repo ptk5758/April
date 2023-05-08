@@ -23,7 +23,7 @@ public class ItemHandler
                 PickUpEgg();
                 break;
             case ItemType.ITEM:
-                Debug.Log("아이템임");
+                PickUpActiveItem();
                 break;
         }
 
@@ -37,7 +37,7 @@ public class ItemHandler
     }
 
 
-    public void PickUpEgg()
+    private void PickUpEgg()
     {        
         Rabbit rabbit = current.GetComponent<Rabbit>();
         if (rabbit.IsPickUpEgg())
@@ -48,6 +48,12 @@ public class ItemHandler
         {
             Debug.Log("달걀을 주울수 가 없습");
         }
+    }
+
+    private void PickUpActiveItem()
+    {
+        Rabbit rabbit = current.GetComponent<Rabbit>();
+        rabbit.currentItem = (ActiveItem) detectItem;
     }
 
 }

@@ -20,6 +20,8 @@ public interface Rabbit
         }
         private set { instance = value; }
     }
+
+    public static bool isPickUpItem = false;
     public void OnHit(Fox fox);
     public Transform GetTransform();    
 
@@ -28,11 +30,6 @@ public interface Rabbit
     /// </summary>
     public float speed { get; set; }
 
-
-    /// <summary>
-    /// 토끼가 감지하고있는 아이템
-    /// </summary>
-    public ItemDefault detectItem { get; set; }
 
     /// <summary>
     /// 현재 토끼가 가지고있는 아이템

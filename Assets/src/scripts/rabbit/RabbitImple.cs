@@ -11,11 +11,18 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     private float _speed; // 실제로 적용돼는 스피드
 
     [field:SerializeField] public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
-    [field:SerializeField] public ItemDefault detectItem { get; set; }
     [field:SerializeField] public ItemDefault currentItem { get; set; }
 
+    /// <summary>
+    /// 달걀 인벤토리
+    /// </summary>
     public List<Egg> eggInventory { get; set; }    
+
+    /// <summary>
+    ///  아이템 관련 헨들러 인스턴스
+    /// </summary>
     public ItemHandler itemHandler { get; set; }
+
 
 
     private void Awake()

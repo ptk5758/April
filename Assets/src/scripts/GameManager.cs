@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         int s = (int)playTime % 60;
         uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
         uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
-        uiManager.SetAbleToPickUpButton(rabbit.detectItem != null);
+        uiManager.SetAbleToPickUpButton(Rabbit.isPickUpItem);
     }
 
     private void Awake()
