@@ -6,4 +6,10 @@ public enum ItemType {
     EGG, 
     ITEM
 }
-public interface Item { }
+public interface Item {
+
+    /// <summary>
+    /// EGG, ITEM
+    /// </summary>    
+    public ItemType GetItemType();
+}

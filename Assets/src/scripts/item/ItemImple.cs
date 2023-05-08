@@ -26,14 +26,14 @@ public abstract class ItemDefault : MonoBehaviour, Item
     {
         if (other.gameObject.tag != "Player") return;
         Rabbit rabbit = other.GetComponent<Rabbit>();
-        rabbit.detectItem = this;
+        rabbit.itemHandler.SetDetectItem(this);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
         Rabbit rabbit = other.GetComponent<Rabbit>();
-        rabbit.detectItem = null;
+        rabbit.itemHandler.SetDetectItem(null);
     }
     public ItemType GetItemType()
     {

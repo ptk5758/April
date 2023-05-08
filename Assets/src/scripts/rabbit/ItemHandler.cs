@@ -10,7 +10,44 @@ public class ItemHandler
     {
         current = gameObject;
     }
-    public void SetDetectItem(Item item) {
+    public void SetDetectItem(Item item) {        
         detectItem = item;
     }
+    public void PickUpItem()
+    {
+        if (detectItem == null) return;
+        
+        switch (detectItem.GetItemType())
+        {
+            case ItemType.EGG:                
+                PickUpEgg();
+                break;
+            case ItemType.ITEM:
+                Debug.Log("아이템임");
+                break;
+        }
+
+        DetectItemDisable();
+    }
+    private void DetectItemDisable()
+    {
+        ItemDefault item = (ItemDefault) detectItem;
+        item.gameObject.SetActive(false);
+        detectItem = null;
+    }
+
+
+    public void PickUpEgg()
+    {        
+        Rabbit rabbit = current.GetComponent<Rabbit>();
+        if (rabbit.IsPickUpEgg())
+        {
+            rabbit.AddEggInventory((Egg) detectItem);
+        }
+        else
+        {
+            Debug.Log("달걀을 주울수 가 없습");
+        }
+    }
+
 }

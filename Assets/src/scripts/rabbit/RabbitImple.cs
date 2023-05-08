@@ -14,12 +14,8 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     [field:SerializeField] public ItemDefault detectItem { get; set; }
     [field:SerializeField] public ItemDefault currentItem { get; set; }
 
-    public List<Egg> eggInventory { get; set; }
-
-    /// <summary>
-    ///  아이템 헨들러
-    /// </summary>
-    public ItemHandler itemHandler;
+    public List<Egg> eggInventory { get; set; }    
+    public ItemHandler itemHandler { get; set; }
 
 
     private void Awake()
@@ -79,47 +75,21 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     }
 
     public void PickUpItem() {
-        if (detectItem == null) return;
-        PickUpItemAfter();
-        switch (currentItem.GetItemType())
-        {
-            case ItemType.EGG:
-                PickUpEgg();
-                break;
-            case ItemType.ITEM:
-                Debug.Log("아이템임");
-                break;
-        }
-    }
-    public void PickUpItemAfter()
-    {
-        currentItem = detectItem;
-        detectItem.gameObject.SetActive(false);
-        detectItem = null;
+        // Debug.Log("Pick Up Item!!!");
+        itemHandler.PickUpItem();
     }
 
-    public void PickUpEgg()
-    {
-        Debug.Log("달걀을 줍는 함수.");
-        if(IsPickUpEgg()) {
-            AddEggInventory();
-        } else {
-            Debug.Log("달걀을 주울수 가 없습");
-        }
-    }
     // 달걀 인벤토리에 계란을 넣는 함수
-    private void AddEggInventory()
+    public void AddEggInventory(Egg egg)
     {
-        eggInventory.Add((Egg) currentItem);        
-        currentItem = null;
+        eggInventory.Add(egg);                
         // Debug.Log("현재 소지중인 Egg Count : " + eggInventory.Count);
     }
-
 
     /// <summary>
     /// 달걀을 들수 있는지 없는지 체크
     /// </summary>    
-    private bool IsPickUpEgg()
+    public bool IsPickUpEgg()
     {
         return true;
     }

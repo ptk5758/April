@@ -43,7 +43,20 @@ public interface Rabbit
     /// 토끼가 가지고있는 Egg 리스트
     /// </summary>
     public List<Egg> eggInventory { get; set; }
-    
+
+    /// <summary>
+    ///  아이템 헨들러
+    /// </summary>
+    public ItemHandler itemHandler { get; set; }
+    /// <summary>
+    /// 달걀을 들수 있는지 없는지 체크
+    /// </summary>    
+    public bool IsPickUpEgg();
+
+    /// <summary>
+    /// 달걀 인벤토리에 계란을 넣는 함수
+    /// </summary>
+    public void AddEggInventory(Egg egg);
 
 
 }
