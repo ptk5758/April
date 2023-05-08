@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/pjw/LoglineTitle/Title.unity
+    path: Assets/Scenes/pjw/Scene/Title.unity
     guid: 5a5f1eb8bab418244916fb8bc3d0b4dd
   - enabled: 1
-    path: Assets/Scenes/pjw/LoglineTitle/Logline.unity
+    path: Assets/Scenes/pjw/Scene/Logline.unity
     guid: 7aa2fe16123f5054d82e47461516e346
+  - enabled: 1
+    path: Assets/Scenes/pjw/Scene/Ready.unity
+    guid: 109ba57d58c657e439d3b12ac3e3e9dd
+  - enabled: 1
+    path: Assets/Scenes/pjw/Scene/Den.unity
+    guid: d44688e8d5f047a48adcca769de5e7c8
   m_configObjects: {}

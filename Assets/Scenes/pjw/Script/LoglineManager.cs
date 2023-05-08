@@ -11,6 +11,8 @@ public class LoglineManager : MonoBehaviour
     
     void Update()
     {
+        //여기서 기본적으로 5초 지나면 옵젝 활성화되도록
+
         if(Input.GetMouseButtonDown(0))
         {
             try
@@ -27,9 +29,6 @@ public class LoglineManager : MonoBehaviour
                 GoTitle();
             }
             
-           
-
-
         }
     }
 
