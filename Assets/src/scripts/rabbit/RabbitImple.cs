@@ -16,6 +16,11 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     public List<Egg> eggInventory { get; set; }
 
+    /// <summary>
+    ///  아이템 헨들러
+    /// </summary>
+    public ItemHandler itemHandler;
+
 
     private void Awake()
     {
@@ -30,6 +35,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         SpawnPoint = transform.position;
         speed = 10; // 기본 스피드
         eggInventory = new List<Egg>();
+        itemHandler = new ItemHandler(gameObject);
 
     }
     private void Update()
