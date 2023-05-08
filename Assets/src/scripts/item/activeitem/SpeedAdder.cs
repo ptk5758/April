@@ -7,17 +7,16 @@ public class SpeedAdder : ActiveItem
     Rabbit rabbit;
     public override void UseItem()
     {
-        // Debug.Log("¼Óµµ°¡ »¡¶óÁü;;");
-        rabbit = Rabbit.Instance;
-        // StartCoroutine(SpeedUp());
+        rabbit = Rabbit.Instance;        
+        SpeedUp();
     }
-    /*
-    IEnumerator SpeedUp()
+    public void SpeedUp()
     {
         rabbit.speed += 10;
-        yield return new WaitForSeconds(5f);
+        Invoke("SpeedReset", 5f);
+    }
+    public void SpeedReset()
+    {
         rabbit.speed -= 10;
     }
-    */
-
 }
