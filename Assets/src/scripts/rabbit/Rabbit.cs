@@ -22,7 +22,6 @@ public interface Rabbit
     }
 
     public static bool isPickUpItem = false;
-    public void OnHit(Fox fox);
     public Transform GetTransform();    
 
     /// <summary>

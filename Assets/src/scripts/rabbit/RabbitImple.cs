@@ -61,13 +61,6 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         rabbitMoveMent.Moving();
     }
 
-    
-
-    public void OnHit(Fox fox)
-    {
-        Spawn();
-    }
-
     public void Spawn()
     {
         gameObject.transform.position = SpawnPoint;
