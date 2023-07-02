@@ -7,9 +7,6 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     [Header("Favorite Variable")]
     private GameManager gameManager;
-    public float speed { get; set; } // 스피드 스텟 이거로 속도 조정함
-    private float _speed; // 실제로 적용돼는 스피드
-
     [field:SerializeField] public Vector3 SpawnPoint { get; set; } // 토끼의 리스폰 장소
     [field:SerializeField] public ItemDefault currentItem { get; set; }
 
@@ -23,7 +20,8 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     /// </summary>
     public ItemHandler itemHandler { get; set; }
 
-
+    /* 2023-07-02 */
+    private RabbitMoveMent rabbitMoveMent;
 
     private void Awake()
     {
@@ -36,18 +34,14 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         gameManager = GameManager.Instance;
         SpawnPoint = transform.position;
-        speed = 10; // 기본 스피드
         eggInventory = new List<Egg>();
         itemHandler = new ItemHandler(gameObject);
+        rabbitMoveMent = new RabbitMoveMent(this.gameObject);
 
     }
     private void Update()
     {
-        CalculateSpeed();
-    }    
-    private void CalculateSpeed() 
-    {
-        _speed = speed;
+
     }
 
     private void Start()
@@ -57,15 +51,10 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     private void FixedUpdate()
     {
-        Moving();
+        rabbitMoveMent.Moving();
     }
 
-    private void Moving()
-    {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * _speed;
-    }
+    
 
     public void OnHit(Fox fox)
     {
