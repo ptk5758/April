@@ -9,6 +9,6 @@ public class PlayerCamera : MonoBehaviour
     public Vector3 offset = new Vector3(0, 30, 0);
     private void Update()
     {
-        transform.position = target.position + offset;
+        this.transform.position = target.position + offset;
     }
 }

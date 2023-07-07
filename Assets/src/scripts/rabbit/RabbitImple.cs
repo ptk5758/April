@@ -29,7 +29,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject);
         else Rabbit.instance = this;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         InitializeToAwak();
     }
     private void InitializeToAwak() 
