@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public GameObject target;
+    Transform target;
     DetectObserver detectObserver;
     Destination destination;
     private void Awake()
@@ -13,12 +13,17 @@ public abstract class Enemy : MonoBehaviour
         this.detectObserver = new DetectObserver();
         this.destination = new Destination(gameObject.GetComponent<NavMeshAgent>());        
     }
+    private void Start()
+    {
+        this.target = Rabbit.instance.GetTransform();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         detectObserver.DetectedObject(collision.gameObject);
     }
     private void Update()
     {
+        /** Debug ¿ë ÄÚµå */
         if (Input.GetKeyDown(KeyCode.Alpha1)) destination.Start();
         if (Input.GetKeyDown(KeyCode.Alpha2)) destination.Stop();
     }
