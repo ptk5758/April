@@ -54,5 +54,7 @@ public interface Rabbit
     /// </summary>
     public void AddEggInventory(Egg egg);
 
+    public void Spawn();
+
 
 }

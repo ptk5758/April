@@ -8,6 +8,7 @@ TagManager:
   - item
   - hitBox
   - spawnPoint
+  - enemy
   layers:
   - Default
   - TransparentFX
