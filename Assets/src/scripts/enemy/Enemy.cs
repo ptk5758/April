@@ -8,10 +8,12 @@ public abstract class Enemy : MonoBehaviour
     Transform target;
     DetectObserver detectObserver;
     Destination destination;
+    Rigidbody rigidbody;
     private void Awake()
     {
         this.detectObserver = new DetectObserver();
-        this.destination = new Destination(gameObject.GetComponent<NavMeshAgent>());        
+        this.destination = new Destination(gameObject.GetComponent<NavMeshAgent>());
+        this.rigidbody = gameObject.GetComponent<Rigidbody>();
     }
     private void Start()
     {
@@ -26,10 +28,12 @@ public abstract class Enemy : MonoBehaviour
         /** Debug ¿ë ÄÚµå */
         if (Input.GetKeyDown(KeyCode.Alpha1)) destination.Start();
         if (Input.GetKeyDown(KeyCode.Alpha2)) destination.Stop();
+        if (target != null) destination.SetTarget(target.transform);
+
     }
     private void FixedUpdate()
     {
-        if (target != null) destination.SetTarget(target.transform);
+        rigidbody.velocity = Vector3.zero;
     }
 }
 class Destination
