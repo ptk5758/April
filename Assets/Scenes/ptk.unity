@@ -2543,7 +2543,7 @@ GameObject:
   - component: {fileID: 1964399386}
   - component: {fileID: 1964399387}
   m_Layer: 0
-  m_Name: EnemeyGroup
+  m_Name: EnemyGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2585,6 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276c61972b0cf0e47a0c13309b891d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 8244680886514443791, guid: 9480a57d61f67fc4eb8bca7e0e382d89, type: 3}
 --- !u!1 &1994196967
 GameObject:
   m_ObjectHideFlags: 0

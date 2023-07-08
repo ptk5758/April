@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    [SerializeField] private GameObject enemyPrefab;
     static List<Transform> summonPoint = new List<Transform>();
+    float coolTime = 10f;
     private void Awake()
     {
         InitializSummonPoint();
+    }
+    private void Update()
+    {
+        // 테스트용
+        /*
+        coolTime -= Time.deltaTime;
+        if (coolTime <= 0)
+        {
+            SummonEnemey();
+            coolTime = 10f;
+        }
+        */
     }
 
     private void InitializSummonPoint()
@@ -16,4 +30,12 @@ public class EnemyManager : MonoBehaviour
         for (int i = 1; i < transforms.Length; i++) summonPoint.Add(transforms[i]);
     }
 
+    public void SummonEnemey()
+    {
+        GameObject enemy = Instantiate(enemyPrefab, GetRandomSummonPoint());
+    }
+    private Transform GetRandomSummonPoint()
+    {
+        return summonPoint[Random.Range(0, summonPoint.Count)];
+    }
 }
