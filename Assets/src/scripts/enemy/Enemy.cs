@@ -25,10 +25,6 @@ public abstract class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        /** Debug ¿ë ÄÚµå */
-        if (Input.GetKeyDown(KeyCode.Alpha1)) destination.Start();
-        if (Input.GetKeyDown(KeyCode.Alpha2)) destination.Stop();
-        if (target != null) destination.SetTarget(target.transform);
 
     }
     private void FixedUpdate()

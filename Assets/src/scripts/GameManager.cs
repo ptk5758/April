@@ -35,18 +35,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     EnemyController enemyController;
 
-    float coolTime = 10f;
-
     private void Update()
     {
         playTime -= Time.deltaTime;        
     }
     private void Start()
     {
-        StartCoroutine(enemyController.SummonCoroutine());
+        StartCoroutine(enemyController.SummonCoroutine()); // 여우 소환 코루틴 시작!
     }
 
-    private void LateUpdate() // Update FiexdUpdate after this Method call
+    private void LateUpdate()
     {
         int m = (int)playTime / 60;
         int s = (int)playTime % 60;
