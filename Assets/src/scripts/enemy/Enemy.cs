@@ -70,6 +70,8 @@ class DetectObserver
 
     public void DetectedPlayer()
     {
-        Rabbit.instance.Spawn();
+        Rabbit rabbit = Rabbit.instance;
+        rabbit.eggInventory.Clear();
+        rabbit.Spawn();
     }
 }

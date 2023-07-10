@@ -833,6 +833,7 @@ MonoBehaviour:
   uiManager: {fileID: 929391033}
   enemyController:
     enemyManager: {fileID: 1964399387}
+    coolTime: 10
 --- !u!4 &657296394
 Transform:
   m_ObjectHideFlags: 0
