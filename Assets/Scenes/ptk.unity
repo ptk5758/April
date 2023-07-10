@@ -831,6 +831,8 @@ MonoBehaviour:
   itemArea: {fileID: 873396092}
   <playTime>k__BackingField: 300
   uiManager: {fileID: 929391033}
+  enemyController:
+    enemyManager: {fileID: 1964399387}
 --- !u!4 &657296394
 Transform:
   m_ObjectHideFlags: 0

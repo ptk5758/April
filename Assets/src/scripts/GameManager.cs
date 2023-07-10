@@ -30,12 +30,21 @@ public class GameManager : MonoBehaviour
     public float playTime { set; get; }
     public int eggCount { set; get; }
 
-    [Header("Favorite Variable")]
     public UIManager uiManager;
+
+    [SerializeField]
+    EnemyController enemyController;
+
+    float coolTime = 10f;
 
     private void Update()
     {
         playTime -= Time.deltaTime;
+        coolTime -= Time.deltaTime;
+        if (coolTime <= 0) {
+            enemyController.Summon();
+            coolTime = 10f;
+        }
     }
 
     private void LateUpdate() // Update FiexdUpdate after this Method call
@@ -73,8 +82,13 @@ public class GameManager : MonoBehaviour
     
 }
 
+[Serializable]
 class EnemyController
 {
-
+    public EnemyManager enemyManager;
+    public void Summon()
+    {
+        enemyManager.SummonEnemey();
+    }
 }
 
