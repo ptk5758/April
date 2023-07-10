@@ -13,15 +13,7 @@ public class EnemyManager : MonoBehaviour
     }
     private void Update()
     {
-        // 테스트용
-        /*
-        coolTime -= Time.deltaTime;
-        if (coolTime <= 0)
-        {
-            SummonEnemey();
-            coolTime = 10f;
-        }
-        */
+
     }
 
     private void InitializSummonPoint()

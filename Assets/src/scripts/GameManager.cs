@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(enemyController.SummonCoroutine());
+        StartCoroutine(enemyController.SummonCoroutine()); // 여우 소환 코루틴 시작!
     }
 
     private void LateUpdate() // Update FiexdUpdate after this Method call
