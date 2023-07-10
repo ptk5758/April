@@ -39,12 +39,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        playTime -= Time.deltaTime;
-        coolTime -= Time.deltaTime;
-        if (coolTime <= 0) {
-            enemyController.Summon();
-            coolTime = 10f;
-        }
+        playTime -= Time.deltaTime;        
+    }
+    private void Start()
+    {
+        StartCoroutine(enemyController.SummonCoroutine());
     }
 
     private void LateUpdate() // Update FiexdUpdate after this Method call
@@ -86,9 +85,18 @@ public class GameManager : MonoBehaviour
 class EnemyController
 {
     public EnemyManager enemyManager;
+    public float coolTime;
     public void Summon()
     {
         enemyManager.SummonEnemey();
+    }
+    public IEnumerator SummonCoroutine()
+    {
+        while (true)
+        {
+            Summon();
+            yield return new WaitForSeconds(coolTime);
+        }
     }
 }
 
