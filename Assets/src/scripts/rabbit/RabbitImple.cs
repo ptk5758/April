@@ -99,6 +99,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         if (!IsUseItem()) return;
         ActiveItem item = (ActiveItem) currentItem;
         item.UseItem();
+        currentItem = null;
     }
 
     private bool IsUseItem()
