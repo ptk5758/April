@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     public float playTime { set; get; }
     public int eggCount { set; get; }
 
-    public UIManager uiManager;
 
     [SerializeField]
     EnemyController enemyController;
@@ -47,11 +46,7 @@ public class GameManager : MonoBehaviour
     private void LateUpdate()
     {
         int m = (int)playTime / 60;
-        int s = (int)playTime % 60;
-        uiManager.SetUIText(UIManager.Type.PLAY_TIME, $"TIME {m} : {s}");
-        uiManager.SetUIText(UIManager.Type.EGG_COUNT, $"EGG : {eggCount}");
-        uiManager.SetAbleToPickUpButton(Rabbit.isPickUpItem);
-        uiManager.activeItem.SetActive(rabbit.currentItem != null);
+        int s = (int)playTime % 60;        
     }
 
     private void Awake()
@@ -71,11 +66,6 @@ public class GameManager : MonoBehaviour
     {
         rabbit = Rabbit.Instance;
     }
-
-    public void HandleItemPickUp(bool status)
-    {
-        uiManager.SetAbleToPickUpButton(status);
-    }   
     
 }
 

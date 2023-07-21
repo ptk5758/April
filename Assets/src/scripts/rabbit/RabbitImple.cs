@@ -51,11 +51,6 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         RabbitMoveMent.speed = this.speed;
     }
 
-    private void Start()
-    {
-        gameManager.HandleItemPickUp(false);
-    }
-
     private void FixedUpdate()
     {
         rabbitMoveMent.Moving();
