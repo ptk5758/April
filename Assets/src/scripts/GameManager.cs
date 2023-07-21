@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     EnemyController enemyController;
 
+    [SerializeField]
+    UIManager uiManager;
+
     private void Update()
     {
         playTime -= Time.deltaTime;        
@@ -57,6 +60,12 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
+        InitializeToAwake();
+    }
+
+    public void InitializeToAwake() 
+    {
+        
     }
     
 }
