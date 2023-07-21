@@ -23,9 +23,6 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    public GameObject itemArea;
-    private Rabbit rabbit;
-
     [field:SerializeField]
     public float playTime { set; get; }
     public int eggCount { set; get; }
@@ -60,31 +57,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         }        
         DontDestroyOnLoad(gameObject);
-        InitializeToAwake();
-    }
-    private void InitializeToAwake()
-    {
-        rabbit = Rabbit.Instance;
     }
     
 }
-
-[Serializable]
-class EnemyController
-{
-    public EnemyManager enemyManager;
-    public float coolTime;
-    public void Summon()
-    {
-        enemyManager.SummonEnemey();
-    }
-    public IEnumerator SummonCoroutine()
-    {
-        while (true)
-        {
-            Summon();
-            yield return new WaitForSeconds(coolTime);
-        }
-    }
-}
-
