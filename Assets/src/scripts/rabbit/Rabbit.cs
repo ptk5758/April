@@ -28,22 +28,11 @@ public interface Rabbit
     /// 토끼 스피드
     /// </summary>
     public float speed { get; set; }
-
-
-    /// <summary>
-    /// 현재 토끼가 가지고있는 아이템
-    /// </summary>
-    public ItemDefault currentItem { get; set; }  
-
     /// <summary>
     /// 토끼가 가지고있는 Egg 리스트
     /// </summary>
     public List<Egg> eggInventory { get; set; }
 
-    /// <summary>
-    ///  아이템 헨들러
-    /// </summary>
-    public ItemHandler itemHandler { get; set; }
     /// <summary>
     /// 달걀을 들수 있는지 없는지 체크
     /// </summary>    

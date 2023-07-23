@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemHandler
+public class RabbitItemHandler
 {
     GameObject current;
     Item detectItem;    
-    public ItemHandler(GameObject gameObject)
+    public RabbitItemHandler(GameObject gameObject)
     {
         current = gameObject;
     }
@@ -53,7 +53,6 @@ public class ItemHandler
     private void PickUpActiveItem()
     {
         Rabbit rabbit = current.GetComponent<Rabbit>();
-        rabbit.currentItem = (ActiveItem) detectItem;
     }
 
 }
