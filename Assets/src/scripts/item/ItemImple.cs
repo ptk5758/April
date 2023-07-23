@@ -25,13 +25,13 @@ public abstract class ItemDefault : MonoBehaviour, Item
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
-        Rabbit rabbit = other.GetComponent<Rabbit>();
+        UIManager.isPickUP = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
-        Rabbit rabbit = other.GetComponent<Rabbit>();
+        UIManager.isPickUP = false;
     }
     public ItemType GetItemType()
     {

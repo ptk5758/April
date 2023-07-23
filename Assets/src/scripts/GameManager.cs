@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        playTime -= Time.deltaTime;        
+        playTime -= Time.deltaTime;             
     }
     private void Start()
     {
@@ -58,13 +58,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }        
-        DontDestroyOnLoad(gameObject);
-        InitializeToAwake();
-    }
-
-    public void InitializeToAwake() 
-    {
-        
+        DontDestroyOnLoad(gameObject);     
     }
     
 }
