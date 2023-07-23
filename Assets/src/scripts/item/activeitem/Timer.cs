@@ -7,6 +7,6 @@ public class Timer : ActiveItem
     public int time;
     public override void UseItem()
     {
-        GameManager.Instance.playTime += time;
+        GameManager.playTime += time;
     }
 }

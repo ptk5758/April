@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    [field:SerializeField]
-    public float playTime { set; get; }
+    public static float playTime = 300f;
     public int eggCount { set; get; }
 
 
@@ -45,8 +44,8 @@ public class GameManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        int m = (int)playTime / 60;
-        int s = (int)playTime % 60;        
+        
+        uiManager.Update();
     }
 
     private void Awake()

@@ -8,5 +8,12 @@ using TMPro;
 public class UIManager
 {
     [SerializeField]
-    TMP_Text timeText;    
+    TMP_Text timeText;
+    public void Update()
+    {
+        float playTime = GameManager.playTime;
+        int m = (int) playTime / 60;
+        int s = (int) playTime % 60;
+        timeText.text = "TIME " + m + " : " + s + "";
+    }
 }
