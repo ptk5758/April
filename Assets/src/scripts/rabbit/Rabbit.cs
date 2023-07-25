@@ -20,8 +20,15 @@ public interface Rabbit
         }
         private set { instance = value; }
     }
-
+    public static Item activeItem { get; set; }
     public RabbitItemHandler itemHandler { get; set; }
+    public void PickUpItem();
+
+    /* 
+     위에는 리팩토링 한 코드들
+    
+    밑에는 옛날에 짠 코드
+     */
 
     public static bool isPickUpItem = false;
     public Transform GetTransform();
@@ -30,4 +37,5 @@ public interface Rabbit
     public bool IsPickUpEgg();
     public void AddEggInventory(Egg egg);
     public void Spawn();
+    
 }

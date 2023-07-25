@@ -13,11 +13,15 @@ public class UIManager
     TMP_Text timeText;
 
     [SerializeField]
-    Image activeButton;
+    Image pickUpButton;
+
+    [SerializeField]
+    Image activeItemButton;
     public void Update()
     {
         UpdateTimeText();
         UpdatePickUpButton();
+        UpdateActiveItemButton();
     }
     private void UpdateTimeText()
     {
@@ -27,7 +31,12 @@ public class UIManager
         timeText.text = "TIME " + m + " : " + s + "";
     }    
     private void UpdatePickUpButton()
+    {
+        pickUpButton.gameObject.SetActive(isPickUP);
+    }
+
+    private void UpdateActiveItemButton()
     {   
-        activeButton.gameObject.SetActive(isPickUP);
+        activeItemButton.gameObject.SetActive(Rabbit.activeItem != null);
     }
 }

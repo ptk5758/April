@@ -55,4 +55,9 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         return true;
     }
+
+    public void PickUpItem()
+    {
+        itemHandler.PickUpItem();
+    }
 }

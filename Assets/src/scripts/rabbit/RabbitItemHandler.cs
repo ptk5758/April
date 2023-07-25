@@ -52,7 +52,7 @@ public class RabbitItemHandler
 
     private void PickUpActiveItem()
     {
-        Rabbit rabbit = current.GetComponent<Rabbit>();
+        Rabbit.activeItem = detectItem;
     }
 
 }
