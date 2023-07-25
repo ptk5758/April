@@ -60,4 +60,11 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     {
         itemHandler.PickUpItem();
     }
+
+    public void UseItem()
+    {
+        ActiveItem item = Rabbit.activeItem as ActiveItem;
+        item.UseItem();
+        Rabbit.activeItem = null;
+    }
 }
