@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     public static float playTime = 300f;
-    public int eggCount { set; get; }
+    public static int eggCount = 0;
 
 
     [SerializeField]

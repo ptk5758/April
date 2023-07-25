@@ -22,7 +22,7 @@ public class Basket : MonoBehaviour
         rabbit.eggInventory.Clear();
 
         // 게임 메니저에 반영 해주기
-        gameManager.eggCount += eggCount;
+        GameManager.eggCount += eggCount;
     }
 
 }

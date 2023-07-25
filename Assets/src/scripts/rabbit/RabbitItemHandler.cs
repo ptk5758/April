@@ -42,7 +42,7 @@ public class RabbitItemHandler
         Rabbit rabbit = current.GetComponent<Rabbit>();
         if (rabbit.IsPickUpEgg())
         {
-            rabbit.AddEggInventory((Egg) detectItem);
+            rabbit.AddEggInventory(detectItem as Egg);
         }
         else
         {

@@ -17,11 +17,16 @@ public class UIManager
 
     [SerializeField]
     Image activeItemButton;
+
+    [SerializeField]
+    TMP_Text scoreText;
+
     public void Update()
     {
         UpdateTimeText();
         UpdatePickUpButton();
         UpdateActiveItemButton();
+        UpdateScoreText();
     }
     private void UpdateTimeText()
     {
@@ -38,5 +43,10 @@ public class UIManager
     private void UpdateActiveItemButton()
     {   
         activeItemButton.gameObject.SetActive(Rabbit.activeItem != null);
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = "Score " + GameManager.eggCount;
     }
 }
