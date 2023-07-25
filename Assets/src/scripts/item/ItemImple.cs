@@ -17,6 +17,11 @@ public abstract class ItemDefault : MonoBehaviour, Item
                 break;
         }
     }
+    public ItemType GetItemType()
+    {
+        return type;
+    }
+
     private void Awake()
     {
         InitializeType();
@@ -25,16 +30,26 @@ public abstract class ItemDefault : MonoBehaviour, Item
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
+        OnRabbitEnter(other.gameObject.GetComponent<Rabbit>());
+    }
+
+    private void OnRabbitEnter(Rabbit rabbit)
+    {
         UIManager.isPickUP = true;
+        RabbitItemHandler rabbitItemHandler = rabbit.itemHandler;        
+        rabbitItemHandler.SetDetectItem(this);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
-        UIManager.isPickUP = false;
+        OnRabbitExit(other.gameObject.GetComponent<Rabbit>());
     }
-    public ItemType GetItemType()
+    private void OnRabbitExit(Rabbit rabbit)
     {
-        return type;
+        UIManager.isPickUP = false;
+        RabbitItemHandler rabbitItemHandler = rabbit.itemHandler;
+        rabbitItemHandler.SetDetectItem(null);
     }
+
 }

@@ -7,7 +7,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     public float speed { get; set; }
     public Vector3 SpawnPoint { get; set; }
     public List<Egg> eggInventory { get; set; }
-    public RabbitItemHandler itemHandler;
+    public RabbitItemHandler itemHandler { get; set; }
     private RabbitMoveMent rabbitMoveMent;
 
     private void Awake()
@@ -22,7 +22,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
         speed = 10;
         eggInventory = new List<Egg>();
         rabbitMoveMent = new RabbitMoveMent(this.gameObject);
-
+        itemHandler = new RabbitItemHandler(this.gameObject);
     }
     private void Update()
     {

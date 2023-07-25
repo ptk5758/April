@@ -10,7 +10,7 @@ public class RabbitItemHandler
     {
         current = gameObject;
     }
-    public void SetDetectItem(Item item) {        
+    public void SetDetectItem(Item item) {
         detectItem = item;
     }
     public void PickUpItem()

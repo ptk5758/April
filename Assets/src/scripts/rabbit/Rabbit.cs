@@ -21,29 +21,13 @@ public interface Rabbit
         private set { instance = value; }
     }
 
+    public RabbitItemHandler itemHandler { get; set; }
+
     public static bool isPickUpItem = false;
-    public Transform GetTransform();    
-
-    /// <summary>
-    /// 토끼 스피드
-    /// </summary>
+    public Transform GetTransform();
     public float speed { get; set; }
-    /// <summary>
-    /// 토끼가 가지고있는 Egg 리스트
-    /// </summary>
     public List<Egg> eggInventory { get; set; }
-
-    /// <summary>
-    /// 달걀을 들수 있는지 없는지 체크
-    /// </summary>    
     public bool IsPickUpEgg();
-
-    /// <summary>
-    /// 달걀 인벤토리에 계란을 넣는 함수
-    /// </summary>
     public void AddEggInventory(Egg egg);
-
     public void Spawn();
-
-
 }
