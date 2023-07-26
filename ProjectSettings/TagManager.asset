@@ -9,6 +9,7 @@ TagManager:
   - hitBox
   - spawnPoint
   - enemy
+  - Eggs
   layers:
   - Default
   - TransparentFX

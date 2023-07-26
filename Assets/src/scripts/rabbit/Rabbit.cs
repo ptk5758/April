@@ -8,17 +8,19 @@ public interface Rabbit
     public static Rabbit instance;
     public static Rabbit Instance
     {
-        get
+        get //값을 return해줌
         {
             if (instance == null)
             {
                 var obj = GameObject.FindObjectOfType<RabbitImple>();
                 if (obj != null)
                     instance = obj;
+                //먹은 Egg, Item을 instance로 설정하면서 RabbitImple의 Awake에서
+                //먹은 Object를 삭제하기 위해서 instance에 obj를 넣어줌
             }
             return instance;
         }
-        private set { instance = value; }
+        private set { instance = value; } //instance값을 value로
     }
     public static Item activeItem { get; set; }
     public RabbitItemHandler itemHandler { get; set; }
