@@ -21,6 +21,9 @@ public class UIManager
     [SerializeField]
     TMP_Text scoreText;
 
+    [SerializeField]
+    RectTransform endingPanel;
+
     public void Update()
     {
         UpdateTimeText();
@@ -48,5 +51,15 @@ public class UIManager
     private void UpdateScoreText()
     {
         scoreText.text = "Score " + GameManager.eggCount;
+    }
+
+    public void OpenEndingBoard()
+    {   
+        endingPanel.anchoredPosition = new Vector2(0, 0);
+    }
+
+    public void CloseEndingBoard()
+    {
+        endingPanel.anchoredPosition = new Vector2(-1300, 0);
     }
 }

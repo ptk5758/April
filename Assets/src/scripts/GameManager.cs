@@ -60,5 +60,15 @@ public class GameManager : MonoBehaviour
         }        
         DontDestroyOnLoad(gameObject);     
     }
+
+    public void GameEnd()
+    {
+        uiManager.OpenEndingBoard();
+    }
+
+    public void CloseEndingBoard()
+    {
+        uiManager.CloseEndingBoard();
+    }
     
 }
