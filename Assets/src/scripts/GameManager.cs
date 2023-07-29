@@ -4,8 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Level
+{
+    NORMAL, EXPERT, MASTER, KING
+}
+
 public class GameManager : MonoBehaviour
 {
+    
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -26,6 +32,12 @@ public class GameManager : MonoBehaviour
     public static float playTime = 10f;
     public static int eggCount = 0;
     public static bool isPlaying = true;
+    public static Level level = Level.NORMAL;
+
+    public static void SetLevel(Level _level)
+    {
+        level = _level;
+    }
 
 
     [SerializeField]
