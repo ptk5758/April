@@ -23,8 +23,9 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    public static float playTime = 300f;
+    public static float playTime = 10f;
     public static int eggCount = 0;
+    public static bool isPlaying = true;
 
 
     [SerializeField]
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         playTime -= Time.deltaTime;
+        if (playTime <= 0) GameEnd();
+
     }
     private void Start()
     {
@@ -63,7 +66,13 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
+        GameStop();
         uiManager.OpenEndingBoard();
+    }
+
+    public static void GameStop()
+    {
+        Time.timeScale = 0;
     }
 
     public void CloseEndingBoard()
