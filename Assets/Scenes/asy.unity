@@ -977,6 +977,7 @@ MonoBehaviour:
     pickUpButton: {fileID: 485619257}
     activeItemButton: {fileID: 2064842928}
     scoreText: {fileID: 939984131}
+    endingPanel: {fileID: 0}
 --- !u!4 &657296394
 Transform:
   m_ObjectHideFlags: 0

@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/pjw/levelSelect.unity
+    guid: 31394748e3c7d5e40b4e174d0f6c2836
+  - enabled: 1
+    path: Assets/Scenes/pjw/MapItemSelect.unity
+    guid: fa98c8bf3cc21134d82ceb266b6a2af8
   m_configObjects: {}
