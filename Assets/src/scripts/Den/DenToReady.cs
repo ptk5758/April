@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class DenToReady : MonoBehaviour
+{
+    //Den æ¿ø°º≠ Ready æ¿¿∏∑Œ ≥—æÓ∞°±‚
+
+    public void MoveToReady()
+    {
+        //SceneManager.LoadScene("ready");
+        Debug.Log("ready æ¿¿∏∑Œ ¿Ãµø");
+    }
+}
