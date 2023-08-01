@@ -10,18 +10,11 @@ public class Map : MonoBehaviour
     public GameObject[] MapRandom;
     GameObject MapObject;
     int RandomInt;
-    int i;
-    bool ActiveBool = true;
 
     void Awake()
     {
         ActiveMap();
     }
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
@@ -46,6 +39,5 @@ public class Map : MonoBehaviour
         Debug.Log(RandomInt + " ·£´ý ¼ýÀÚ");
         MapObject = MapRandom[RandomInt];
         MapObject.gameObject.SetActive(true);
-        
     }
 }

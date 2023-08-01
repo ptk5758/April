@@ -6,14 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/pjw/levelSelect.unity
-    guid: 31394748e3c7d5e40b4e174d0f6c2836
-  - enabled: 1
     path: Assets/Scenes/pjw/MapItemSelect.unity
     guid: fa98c8bf3cc21134d82ceb266b6a2af8
-=======
-    path: Assets/Scenes/pjw/den.unity
-    guid: 7a13ec71aedc30145bf7310fee67d02e
->>>>>>> 5bb89962f20ea0384da8a27867ce4f47f0bd0812
+  - enabled: 1
+    path: Assets/Scenes/pjw/levelSelect.unity
+    guid: 401728288a0d7e24fbb4643585041396
   m_configObjects: {}

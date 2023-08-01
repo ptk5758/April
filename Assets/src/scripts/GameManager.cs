@@ -33,11 +33,29 @@ public class GameManager : MonoBehaviour
     public static int eggCount = 0;
     public static bool isPlaying = true;
     public static Level level = Level.NORMAL;
+    public static int i;
 
-    public static void SetLevel(Level _level)
+    public static void SetLevel(int _level)
     {
-        level = _level;
+        i = _level;
     }
+
+    public void SetLevelNumber()
+    {
+            switch (i) 
+            {
+                case 0: level = Level.NORMAL; 
+                        break;
+                case 1: level = Level.MASTER; 
+                        break;
+                case 2: level = Level.MASTER;
+                        break;
+                case 3: level = Level.MASTER;
+                        break;
+                default: Debug.Log("난이도를 선택하지 않았습니다.");
+                         break;
+            }
+    } 
 
 
     [SerializeField]
