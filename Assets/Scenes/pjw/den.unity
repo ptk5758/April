@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 102476377}
   - component: {fileID: 102476376}
   - component: {fileID: 102476378}
+  - component: {fileID: 102476379}
   m_Layer: 5
   m_Name: 02rabbit
   m_TagString: Untagged
@@ -313,8 +314,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 659829274}
-        m_TargetAssemblyTypeName: SelectRabbit, Assembly-CSharp
+      - m_Target: {fileID: 102476379}
+        m_TargetAssemblyTypeName: DenInRabbits, Assembly-CSharp
         m_MethodName: DenInRabbit
         m_Mode: 1
         m_Arguments:
@@ -325,6 +326,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &102476379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102476374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c60be05374b38468b262aad8093785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSelects: []
+  readyRabbits: []
 --- !u!1 &122960694
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +432,7 @@ GameObject:
   - component: {fileID: 183244390}
   - component: {fileID: 183244389}
   - component: {fileID: 183244391}
+  - component: {fileID: 183244392}
   m_Layer: 5
   m_Name: 00rabbit
   m_TagString: Untagged
@@ -527,8 +543,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 659829274}
-        m_TargetAssemblyTypeName: SelectRabbit, Assembly-CSharp
+      - m_Target: {fileID: 183244392}
+        m_TargetAssemblyTypeName: DenInRabbits, Assembly-CSharp
         m_MethodName: DenInRabbit
         m_Mode: 1
         m_Arguments:
@@ -539,6 +555,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &183244392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183244387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c60be05374b38468b262aad8093785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSelects: []
+  readyRabbits: []
 --- !u!1 &189188517
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +861,7 @@ GameObject:
   - component: {fileID: 481544489}
   - component: {fileID: 481544488}
   - component: {fileID: 481544490}
+  - component: {fileID: 481544491}
   m_Layer: 5
   m_Name: 03rabbit
   m_TagString: Untagged
@@ -941,8 +972,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 659829274}
-        m_TargetAssemblyTypeName: SelectRabbit, Assembly-CSharp
+      - m_Target: {fileID: 481544491}
+        m_TargetAssemblyTypeName: DenInRabbits, Assembly-CSharp
         m_MethodName: DenInRabbit
         m_Mode: 1
         m_Arguments:
@@ -953,6 +984,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &481544491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481544486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c60be05374b38468b262aad8093785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSelects: []
+  readyRabbits: []
 --- !u!1 &496391689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,11 +1297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a903688edb9ba584581756c0cedbbd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  denInRabbits:
-  - {fileID: 183244387}
-  - {fileID: 1901467174}
-  - {fileID: 102476374}
-  - {fileID: 481544486}
   btnSelects:
   - {fileID: 496391689}
   - {fileID: 2092003284}
@@ -1267,10 +1307,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  rabbitIndex: 0
-  selectNum: 0
-  rabbit3DNum: 0
-  isBtnSelect: 0
 --- !u!114 &659829275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,13 +1346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c60be05374b38468b262aad8093785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  denInRabbits: []
   btnSelects: []
   readyRabbits: []
-  rabbitIndex: 0
-  selectNum: 0
-  rabbit3DNum: 0
-  isBtnSelect: 0
 --- !u!1 &662490709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,6 +2292,7 @@ GameObject:
   - component: {fileID: 1901467177}
   - component: {fileID: 1901467176}
   - component: {fileID: 1901467178}
+  - component: {fileID: 1901467179}
   m_Layer: 5
   m_Name: 01rabbit
   m_TagString: Untagged
@@ -2371,8 +2403,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 659829274}
-        m_TargetAssemblyTypeName: SelectRabbit, Assembly-CSharp
+      - m_Target: {fileID: 1901467179}
+        m_TargetAssemblyTypeName: DenInRabbits, Assembly-CSharp
         m_MethodName: DenInRabbit
         m_Mode: 1
         m_Arguments:
@@ -2383,6 +2415,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1901467179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901467174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c60be05374b38468b262aad8093785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSelects: []
+  readyRabbits: []
 --- !u!1 &2024077258
 GameObject:
   m_ObjectHideFlags: 0
