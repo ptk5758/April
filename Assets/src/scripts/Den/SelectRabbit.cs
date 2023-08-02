@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SelectRabbit : MonoBehaviour
 {
-    public static GameObject[] denInRabbits;
     static GameObject[] btnSelects;
     static GameObject[] readyRabbits;
     public static int rabbitIndex; //denInRabbits 배열의 인덱스 관리 변수
