@@ -15,6 +15,6 @@ public class LevelSelect : MonoBehaviour
         Debug.Log("Level0 버튼 선택");
         PlayerPrefs.SetInt("GameLevel", (int)value);
         SceneManager.LoadScene("MapItemSelect");
-        //맵 Scene으로 바뀌는 코드
+        //맵 Scene으로 바뀌는 코드 
     }
 }
