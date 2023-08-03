@@ -909,6 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playableRabbit: []
+  lastRabbitPosition: {x: 26, y: -33, z: 70}
   lastRabbit: {fileID: 0}
 --- !u!114 &659829275
 MonoBehaviour:
@@ -1140,7 +1141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 804858477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659829277}
+        m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
+        m_MethodName: InactiveSelectBtn002
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &804858477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,7 +1275,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 943225605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659829277}
+        m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
+        m_MethodName: InactiveSelectBtn003
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &943225605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1958,7 +1983,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630147145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659829277}
+        m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
+        m_MethodName: InactiveSelectBtn001
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1630147145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,7 +2411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1957101661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659829277}
+        m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
+        m_MethodName: InactiveSelectBtn004
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1957101661
 MonoBehaviour:
   m_ObjectHideFlags: 0
