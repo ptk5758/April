@@ -9,7 +9,7 @@ public class DenToReady : MonoBehaviour
 
     public void MoveToReady()
     {
-        //SceneManager.LoadScene("ready");
-        Debug.Log("ready æ¿¿∏∑Œ ¿Ãµø");
+        SceneManager.LoadScene("ready");
+        //Debug.Log("ready æ¿¿∏∑Œ ¿Ãµø");
     }
 }
