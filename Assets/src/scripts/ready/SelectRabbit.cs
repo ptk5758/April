@@ -23,6 +23,7 @@ public class SelectRabbit : MonoBehaviour
     {
         //해당 오브젝트 활성화 함수 호출
         InactiveRabbit();
+        //isRabbitAcitve = true;
     }
     private void Update()
     {
@@ -33,11 +34,11 @@ public class SelectRabbit : MonoBehaviour
     {
         //반복문으로 playableRabbit의 오브젝트 다 비활성화시키기
 
-        for(SelectbtnActive.rabbitIndex=0;SelectbtnActive.rabbitIndex<playableRabbit.Length;SelectbtnActive.rabbitIndex++)
+        for(int i=0;i<playableRabbit.Length;i++)
         {
             
-            playableRabbit[SelectbtnActive.rabbitIndex].SetActive(isRabbitAcitve);
-            //Debug.Log(SelectbtnActive.rabbitIndex + "번째 토끼 삭제 ");
+            playableRabbit[i].SetActive(isRabbitAcitve);
+            Debug.Log(i + "번째 토끼 삭제 ");
         }
 
     }
@@ -45,29 +46,34 @@ public class SelectRabbit : MonoBehaviour
     void ActiveRabbit()
     {
         //if문으로 해당 인덱스의 playableRabbit 활성화 
-        Debug.Log( "den의 인덱스 : "+playableRabbitIndex);
+        //Debug.Log( "den의 인덱스 : "+playableRabbitIndex);
+        //Debug.Log("ddd " + SelectbtnActive.rabbitIndex);
+        isRabbitAcitve = true;
 
-        if(playableRabbitIndex==0)
+        if (SelectbtnActive.rabbitIndex==0)
         {
-            isRabbitAcitve = true;
-            playableRabbit[playableRabbitIndex].SetActive(isRabbitAcitve);
-            //위의 Active가 실행이 안되고있음
+           
+            playableRabbit[SelectbtnActive.rabbitIndex].SetActive(isRabbitAcitve);
+            Debug.Log("sss" + SelectbtnActive.rabbitIndex);
 
         }
 
-        if (playableRabbitIndex == 1)
+        if (SelectbtnActive.rabbitIndex == 1)
         {
-            playableRabbit[playableRabbitIndex].SetActive(true);
+            playableRabbit[SelectbtnActive.rabbitIndex].SetActive(true);
+            Debug.Log("sss" + SelectbtnActive.rabbitIndex);
         }
 
-        if (playableRabbitIndex == 2)
+        if (SelectbtnActive.rabbitIndex == 2)
         {
-            playableRabbit[playableRabbitIndex].SetActive(true);
+            playableRabbit[SelectbtnActive.rabbitIndex].SetActive(true);
+            Debug.Log("sss" + SelectbtnActive.rabbitIndex);
         }
 
-        if (playableRabbitIndex == 3)
+        if (SelectbtnActive.rabbitIndex == 3)
         {
-            playableRabbit[playableRabbitIndex].SetActive(true);
+            playableRabbit[SelectbtnActive.rabbitIndex].SetActive(true);
+            Debug.Log("sss" + SelectbtnActive.rabbitIndex);
         }
 
     }
