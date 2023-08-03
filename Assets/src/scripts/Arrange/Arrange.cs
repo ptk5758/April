@@ -14,6 +14,7 @@ public class Arrange : MonoBehaviour
     void Awake()
     {
         RandomArrange();
+        Debug.Log(PlayerPrefs.GetInt("GameLevel"));
     }
 
     public void RandomArrange()
