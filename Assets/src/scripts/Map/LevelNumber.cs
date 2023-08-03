@@ -10,8 +10,4 @@ public class LevelNumber
         selectLevel = i;
     }
 
-    public void SendLevel()
-    {
-        GameManager.SetLevel(selectLevel);
-    }
 }
