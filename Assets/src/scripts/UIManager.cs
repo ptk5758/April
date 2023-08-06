@@ -60,6 +60,6 @@ public class UIManager
 
     public void CloseEndingBoard()
     {
-        endingPanel.anchoredPosition = new Vector2(-1300, 0);
+        endingPanel.gameObject.SetActive(false);
     }
 }

@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void CloseEndingBoard()
+    public void CloseEndingBoard() 
     {
         uiManager.CloseEndingBoard();
     }
