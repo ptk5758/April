@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     public static Level level = Level.NORMAL;
     public static int i;
 
+    [SerializeField]
+    ItemManager itemManager;
+
     public static void SetLevel(int _level)
     {
         i = _level;
@@ -53,7 +56,7 @@ public class GameManager : MonoBehaviour
                         break;
                 case 3: level = Level.MASTER;
                         break;
-                default: Debug.Log("난이도를 선택하지 않았습니다.");
+                default: Debug.Log("???????? ???????? ??????????.");
                          break;
             }
     } 
@@ -73,7 +76,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(enemyController.SummonCoroutine()); // 여우 소환 코루틴 시작!
+        StartCoroutine(enemyController.SummonCoroutine()); // ???? ???? ?????? ????!
     }
 
     private void LateUpdate()

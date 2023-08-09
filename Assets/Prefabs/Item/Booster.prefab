@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1408292744907824131}
   - component: {fileID: 4581615177060804365}
   m_Layer: 0
-  m_Name: SpeedAdder
+  m_Name: Booster
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
