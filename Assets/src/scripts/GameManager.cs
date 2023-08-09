@@ -33,34 +33,10 @@ public class GameManager : MonoBehaviour
     public static float playTime = 10f;
     public static int eggCount = 0;
     public static bool isPlaying = true;
-    public static Level level = Level.NORMAL;
-    public static int i;
+    public static Level level;
 
     [SerializeField]
     ItemManager itemManager;
-
-    public static void SetLevel(int _level)
-    {
-        i = _level;
-    }
-
-    public void SetLevelNumber()
-    {
-            switch (i) 
-            {
-                case 0: level = Level.NORMAL; 
-                        break;
-                case 1: level = Level.MASTER; 
-                        break;
-                case 2: level = Level.MASTER;
-                        break;
-                case 3: level = Level.MASTER;
-                        break;
-                default: Debug.Log("???????? ???????? ??????????.");
-                         break;
-            }
-    } 
-
 
     [SerializeField]
     EnemyController enemyController;
@@ -96,6 +72,8 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        itemManager.InitializeItemManager();
+        InitializeGameLevel();
     }
 
     public void GameEnd()
@@ -112,6 +90,30 @@ public class GameManager : MonoBehaviour
     public void CloseEndingBoard() 
     {
         uiManager.CloseEndingBoard();
+    }
+
+    private void InitializeGameLevel()
+    {
+        SetGameLevel(PlayerPrefs.GetInt("GameLevel"));
+    }
+
+    private void SetGameLevel(int _level)
+    {
+        switch (_level)
+        {
+            case 1:
+                level = Level.NORMAL;
+                break;
+            case 2:
+                level = Level.EXPERT;
+                break;
+            case 3:
+                level = Level.MASTER;
+                break;
+            case 4:
+                level = Level.KING;
+                break;
+        }
     }
 
 }

@@ -5,14 +5,23 @@ using UnityEngine;
 [System.Serializable]
 public class ItemManager
 {
-    static Transform[] transforms;
+    [SerializeField]
+    private Transform[] transforms;
 
     [SerializeField]
-    Transform transformsGroup;
+    private Transform transformsGroup;
 
     [SerializeField]
-    GameObject boosterPrefab;
+    private GameObject boosterPrefab;
 
     [SerializeField]
-    GameObject TimerPrefab;
+    private GameObject TimerPrefab;
+
+    private Level gameLevel;
+
+    public void InitializeItemManager()
+    {
+        transforms = transformsGroup.GetComponentsInChildren<Transform>();
+        gameLevel = GameManager.level;
+    }
 }
