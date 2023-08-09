@@ -17,8 +17,12 @@ public class ItemManager
     [SerializeField]
     private GameObject TimerPrefab;
 
+    private int maxItem;
+
     public void InitializeItemManager()
     {
         transforms = transformsGroup.GetComponentsInChildren<Transform>();
+        maxItem = LevelManager.GetGameLevelOptionData(GameLevelOption.ITEM);
+        Debug.Log("MAX ITEM : " + maxItem);
     }
 }

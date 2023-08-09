@@ -70,8 +70,13 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        InitializeInstance();
         itemManager.InitializeItemManager();
-        InitializeGameLevel();
+
+    }
+    private void InitializeInstance()
+    {
+        levelManager = new LevelManager();
     }
 
     public void GameEnd()
@@ -90,9 +95,6 @@ public class GameManager : MonoBehaviour
         uiManager.CloseEndingBoard();
     }
 
-    private void InitializeGameLevel()
-    {
-        SetGameLevel(PlayerPrefs.GetInt("GameLevel"));
-    }
+    
 
 }
