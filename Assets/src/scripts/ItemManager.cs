@@ -17,11 +17,8 @@ public class ItemManager
     [SerializeField]
     private GameObject TimerPrefab;
 
-    private Level gameLevel;
-
     public void InitializeItemManager()
     {
         transforms = transformsGroup.GetComponentsInChildren<Transform>();
-        gameLevel = GameManager.level;
     }
 }

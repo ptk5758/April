@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Level
-{
-    NORMAL, EXPERT, MASTER, KING
-}
+
 
 public class GameManager : MonoBehaviour
 {
@@ -33,16 +30,17 @@ public class GameManager : MonoBehaviour
     public static float playTime = 10f;
     public static int eggCount = 0;
     public static bool isPlaying = true;
-    public static Level level;
 
     [SerializeField]
-    ItemManager itemManager;
+    private ItemManager itemManager;
 
     [SerializeField]
-    EnemyController enemyController;
+    private EnemyController enemyController;
 
     [SerializeField]
-    UIManager uiManager;
+    private UIManager uiManager;
+
+    private LevelManager levelManager;
 
     private void Update()
     {
@@ -95,25 +93,6 @@ public class GameManager : MonoBehaviour
     private void InitializeGameLevel()
     {
         SetGameLevel(PlayerPrefs.GetInt("GameLevel"));
-    }
-
-    private void SetGameLevel(int _level)
-    {
-        switch (_level)
-        {
-            case 1:
-                level = Level.NORMAL;
-                break;
-            case 2:
-                level = Level.EXPERT;
-                break;
-            case 3:
-                level = Level.MASTER;
-                break;
-            case 4:
-                level = Level.KING;
-                break;
-        }
     }
 
 }
