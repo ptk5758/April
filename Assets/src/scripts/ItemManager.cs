@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ItemManager
 {
-    [SerializeField]
+
     private Transform[] transforms;
 
     [SerializeField]
@@ -23,6 +23,17 @@ public class ItemManager
     {
         transforms = transformsGroup.GetComponentsInChildren<Transform>();
         maxItem = LevelManager.GetGameLevelOptionData(GameLevelOption.ITEM);
-        Debug.Log("MAX ITEM : " + maxItem);
+        SummonItem();
     }
+
+    private void SummonItem()
+    {
+        for (int i=0; i<maxItem; i++)
+        {
+            GameObject obj = Object.Instantiate(boosterPrefab, transformsGroup);
+            obj.transform.position = transforms[Random.Range(1, transforms.Length)].position;
+        }
+        
+    }
+
 }
