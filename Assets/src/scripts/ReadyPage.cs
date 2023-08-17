@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ReadyPage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    Animator basketAnimator;
 
-    // Update is called once per frame
-    void Update()
+    public void OpenLevelSelector()
     {
-        
+        StartCoroutine(BasketAnimation());
+    }
+    IEnumerator BasketAnimation()
+    {
+        basketAnimator.SetBool("isLevelSelector", true);
+        yield return null;
+        basketAnimator.SetBool("isLevelSelector", false);
     }
 }
