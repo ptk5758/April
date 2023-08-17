@@ -8,13 +8,8 @@ public class ReadyPage : MonoBehaviour
     Animator basketAnimator;
 
     public void OpenLevelSelector()
-    {
-        StartCoroutine(BasketAnimation());
-    }
-    IEnumerator BasketAnimation()
-    {
+    {        
         basketAnimator.SetBool("isLevelSelector", true);
-        yield return null;
-        basketAnimator.SetBool("isLevelSelector", false);
     }
+    
 }
