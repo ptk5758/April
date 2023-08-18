@@ -28,6 +28,7 @@ public class ReadyPage : MonoBehaviour
 
     public void ActivationLevelSelectBoard(bool state)
     {
+        ReadyRabbit.current.SetActive(!state);
         readyPageUI.ActiveLevelSelectBoard(state);
     }
 
@@ -40,7 +41,7 @@ public class ReadyPage : MonoBehaviour
     }
     IEnumerator LoadScene(string sceneName)
     {
-        ReadyRabbit.current.SetActive(false);
+        
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
