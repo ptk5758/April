@@ -7,9 +7,24 @@ public class ReadyPage : MonoBehaviour
     [SerializeField]
     Animator basketAnimator;
 
-    public void OpenLevelSelector()
-    {        
-        basketAnimator.SetBool("isLevelSelector", true);
+    [SerializeField]
+    ReadyPageUI readyPageUI;
+
+    public void ActivationLevelSelectBoard(bool state)
+    {
+        readyPageUI.ActiveLevelSelectBoard(state);
     }
-    
+}
+
+[System.Serializable]
+class ReadyPageUI
+{
+    [SerializeField]
+    GameObject levelSelectBoard;
+
+    internal void ActiveLevelSelectBoard(bool state)
+    {
+        levelSelectBoard.SetActive(state);
+    }
+
 }
