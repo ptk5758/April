@@ -31,6 +31,7 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
     }
     private void Update()
     {
+        rabbitMoveMent.Update();
         CalculateSpeed();
     }    
     private void CalculateSpeed() 
