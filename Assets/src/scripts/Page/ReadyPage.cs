@@ -40,6 +40,7 @@ public class ReadyPage : MonoBehaviour
     }
     IEnumerator LoadScene(string sceneName)
     {
+        ReadyRabbit.current.SetActive(false);
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
@@ -75,6 +76,8 @@ class ReadyPageUI
 [System.Serializable]
 class ReadyRabbit
 {
+    public static GameObject current;
+
     [SerializeField]
     GameObject[] rabbitPrefabs;
 
@@ -84,5 +87,7 @@ class ReadyRabbit
     public void SelectRabbit(int value)
     {
         GameObject rabbit = GameObject.Instantiate(rabbitPrefabs[value], field);
+        current = rabbit;
+
     }
 }
