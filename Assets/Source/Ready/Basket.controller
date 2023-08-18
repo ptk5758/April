@@ -35,7 +35,7 @@ AnimatorController:
   m_Name: Basket
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isLevelSelector
+  - m_Name: isDown
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -115,7 +115,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isLevelSelector
+    m_ConditionEvent: isDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3749728653547000928}

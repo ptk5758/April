@@ -39,7 +39,7 @@ public class LevelManager
         dictionary = new Dictionary<GameLevelOption, int[]>();
         dictionary.Add(GameLevelOption.ITEM, new int[] { 8, 5, 3, 1 });
     }
-    private void SetGameLevel(int value)
+    public static void SetGameLevel(int value)
     {
         switch (value)
         {
