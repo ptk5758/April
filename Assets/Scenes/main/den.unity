@@ -315,12 +315,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 659829277}
         m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
-        m_MethodName: Selectbtn003
-        m_Mode: 1
+        m_MethodName: SelectRabbit
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -529,8 +529,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 659829277}
         m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
-        m_MethodName: Selectbtn001
-        m_Mode: 1
+        m_MethodName: SelectRabbit
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -867,12 +867,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 659829277}
         m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
-        m_MethodName: Selectbtn004
-        m_Mode: 1
+        m_MethodName: SelectRabbit
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -934,11 +934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbbacabcb82c84ca8834810154e751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnSelects:
-  - {fileID: 1630147142}
-  - {fileID: 804858474}
-  - {fileID: 943225602}
-  - {fileID: 1957101658}
 --- !u!1 &662490709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,12 +2297,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 659829277}
         m_TargetAssemblyTypeName: SelectbtnActive, Assembly-CSharp
-        m_MethodName: Selectbtn002
-        m_Mode: 1
+        m_MethodName: SelectRabbit
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

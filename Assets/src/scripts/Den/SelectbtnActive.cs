@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SelectbtnActive : MonoBehaviour
 {
-    //2D Åä³¢ ui Å¬¸¯ ½Ã Select¹öÆ° SetActive
+    //2D í† ë¼ ui í´ë¦­ ì‹œ Selectë²„íŠ¼ SetActive
 
     //public GameObject[] denInRabbits;
-    public GameObject[] btnSelects;
+    /*public GameObject[] btnSelects;
     public static int rabbitIndex;
-
+    */
+    public void SelectRabbit(int value)
+    {
+        Player.selectRabbitId = value;
+        SceneManager.LoadScene("Ready");
+    }
+    /*
     public void Selectbtn001()
     {
         rabbitIndex = 0;
@@ -21,7 +27,7 @@ public class SelectbtnActive : MonoBehaviour
 
     public void InactiveSelectBtn001()
     {
-        //rabbitÀÎµ¦½º ÃÊ±âÈ­ + selectbtn Å¬¸¯ ½Ã ºñÈ°¼ºÈ­
+        //rabbitì¸ë±ìŠ¤ ì´ˆê¸°í™” + selectbtn í´ë¦­ ì‹œ ë¹„í™œì„±í™”
         rabbitIndex = 0;
         btnSelects[rabbitIndex].SetActive(false);
         SceneManager.LoadScene("ready");
@@ -63,6 +69,6 @@ public class SelectbtnActive : MonoBehaviour
         rabbitIndex = 3;
         btnSelects[rabbitIndex].SetActive(false);
         SceneManager.LoadScene("ready");
-    }
+    }*/
 
 }

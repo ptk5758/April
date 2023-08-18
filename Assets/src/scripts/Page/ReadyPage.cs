@@ -11,6 +11,13 @@ public class ReadyPage : MonoBehaviour
     [SerializeField]
     ReadyPageUI readyPageUI;
 
+    
+
+    private void Awake()
+    {
+        Debug.Log(Player.selectRabbitId);
+    }
+
     public void ActivationLevelSelectBoard(bool state)
     {
         readyPageUI.ActiveLevelSelectBoard(state);
@@ -40,7 +47,7 @@ public class ReadyPage : MonoBehaviour
 
     public void LoadDenScene()
     {
-        SceneManager.LoadScene("den");
+        SceneManager.LoadScene("Den");
     }
 }
 
