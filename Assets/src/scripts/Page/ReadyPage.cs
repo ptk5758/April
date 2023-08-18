@@ -37,6 +37,11 @@ public class ReadyPage : MonoBehaviour
             yield return null;
         }
     }
+
+    public void LoadDenScene()
+    {
+        SceneManager.LoadScene("den");
+    }
 }
 
 [System.Serializable]
