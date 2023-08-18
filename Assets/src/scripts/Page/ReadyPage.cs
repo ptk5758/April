@@ -31,7 +31,7 @@ public class ReadyPage : MonoBehaviour
         {   
             if (asyncOperation.progress >= 0.9f)
             {                
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(2f);
                 asyncOperation.allowSceneActivation = true;
             }
             yield return null;

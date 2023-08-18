@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private UIManager uiManager;
 
-    private LevelManager levelManager;
+    LevelManager levelManager;
+    GameLevel gameLevel;
 
     private void Update()
     {
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(enemyController.SummonCoroutine()); // ???? ???? ?????? ????!
+        StartCoroutine(enemyController.SummonCoroutine()); //여우 소환 코루틴
     }
 
     private void LateUpdate()
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
     private void InitializeInstance()
     {
         levelManager = new LevelManager();
+        gameLevel = LevelManager.gameLevel;
     }
 
     public void GameEnd()
