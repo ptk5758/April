@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -99,4 +100,107 @@ public class GameManager : MonoBehaviour
 
     
 
+=======
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+
+public class GameManager : MonoBehaviour
+{
+    
+    private static GameManager instance;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                var obj = FindObjectOfType<GameManager>();
+                if (obj != null)
+                    instance = obj;
+            }
+            return instance;
+
+        }
+        private set { instance = value; }
+    }
+
+    public static float playTime = 10f;
+    public static int eggCount = 0;
+    public static bool isPlaying = true;
+
+    [SerializeField]
+    private ItemManager itemManager;
+
+    [SerializeField]
+    private EnemyController enemyController;
+
+    [SerializeField]
+    private UIManager uiManager;
+
+    LevelManager levelManager;
+    GameLevel gameLevel;
+
+    private void Update()
+    {
+        playTime -= Time.deltaTime;
+        if (playTime <= 0) GameEnd();
+
+    }
+    private void Start()
+    {
+        StartCoroutine(enemyController.SummonCoroutine()); //여우 소환 코루틴
+    }
+
+    private void LateUpdate()
+    {
+
+        uiManager.Update();
+    }
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+        InitializeInstance();
+        itemManager.InitializeItemManager();
+
+    }
+    private void InitializeInstance()
+    {
+        levelManager = new LevelManager();
+        gameLevel = LevelManager.gameLevel;
+    }
+
+    public void GameEnd()
+    {
+        GameStop();
+        uiManager.OpenEndingBoard();
+    }
+
+    public static void GameStop()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void CloseEndingBoard() 
+    {
+        uiManager.CloseEndingBoard();
+    }
+
+    
+
+>>>>>>> 632b9130c934ff50268b2a979d2733f6154c8a26
 }
