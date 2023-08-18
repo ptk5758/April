@@ -11,11 +11,19 @@ public class ReadyPage : MonoBehaviour
     [SerializeField]
     ReadyPageUI readyPageUI;
 
+    [SerializeField]
+    ReadyRabbit readyRabbit;
+
     
 
     private void Awake()
     {
-        Debug.Log(Player.selectRabbitId);
+        
+    }
+
+    private void Start()
+    {
+        readyRabbit.SelectRabbit(Player.selectRabbitId);
     }
 
     public void ActivationLevelSelectBoard(bool state)
@@ -62,4 +70,19 @@ class ReadyPageUI
         levelSelectBoard.SetActive(state);
     }
 
+}
+
+[System.Serializable]
+class ReadyRabbit
+{
+    [SerializeField]
+    GameObject[] rabbitPrefabs;
+
+    [SerializeField]
+    Transform field;
+
+    public void SelectRabbit(int value)
+    {
+        GameObject rabbit = GameObject.Instantiate(rabbitPrefabs[value], field);
+    }
 }
