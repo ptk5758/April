@@ -62,3 +62,4 @@ crashlytics-build.properties
 *.dwlt
 .UserSettings/
 UserSettings/
+ProjectSettings/
