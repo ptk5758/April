@@ -44,6 +44,7 @@ public class ReadyPage : MonoBehaviour
         
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         asyncOperation.allowSceneActivation = false;
+        Debug.Log(asyncOperation.progress);
         while (!asyncOperation.isDone)
         {   
             if (asyncOperation.progress >= 0.9f)
@@ -58,6 +59,10 @@ public class ReadyPage : MonoBehaviour
     public void LoadDenScene()
     {
         SceneManager.LoadScene("Den");
+    }
+    private void OnEnable()
+    {
+        Time.timeScale = 1;
     }
 }
 

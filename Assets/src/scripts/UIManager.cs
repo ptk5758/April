@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 [System.Serializable]
@@ -54,12 +55,13 @@ public class UIManager
     }
 
     public void OpenEndingBoard()
-    {   
-        endingPanel.anchoredPosition = new Vector2(0, 0);
+    {
+        endingPanel.gameObject.SetActive(true);
     }
 
     public void CloseEndingBoard()
     {
-        endingPanel.gameObject.SetActive(false);
+        SceneManager.LoadScene("Ready");
+        // endingPanel.gameObject.SetActive(false);
     }
 }
