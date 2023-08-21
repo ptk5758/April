@@ -25,6 +25,23 @@ public class UIManager
     [SerializeField]
     RectTransform endingPanel;
 
+    [SerializeField]
+    TMP_Text endingScoreBoard;
+
+    [SerializeField]
+    Sprite[] resultValueImages;
+
+    [SerializeField]
+    Sprite[] resultRankImages;
+
+    [SerializeField]
+    Image resultValueImage;
+
+    [SerializeField]
+    Image resultRankImage;
+
+
+
     public void Update()
     {
         UpdateTimeText();
@@ -56,6 +73,17 @@ public class UIManager
 
     public void OpenEndingBoard()
     {
+        endingScoreBoard.text = GameManager.eggCount.ToString();
+        if (GameManager.eggCount > 0)
+        {
+            resultValueImage.sprite = resultValueImages[1];
+        }
+        else
+        {
+            resultValueImage.sprite = resultValueImages[0];
+        }
+        //resultValueImage.sprite;
+        //resultRankImage.sprite;
         endingPanel.gameObject.SetActive(true);
     }
 
