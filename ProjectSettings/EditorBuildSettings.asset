@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main/den.unity
     guid: ca4e69ffea360a3439e08a3fe120d791
+  - enabled: 1
+    path: Assets/Scenes/ptk.unity
+    guid: 469759b05880d6c429374f490a60178f
   m_configObjects: {}
