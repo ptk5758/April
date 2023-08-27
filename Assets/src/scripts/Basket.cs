@@ -15,14 +15,9 @@ public class Basket : MonoBehaviour
 
         if (other.tag != "Player") return;
         Rabbit rabbit = other.gameObject.GetComponent<Rabbit>();
-        // 알 갯수 가져오기
         int eggCount = rabbit.eggInventory.Count;
-
-        // 알 비워 주기
-        rabbit.eggInventory.Clear();
-
-        // 게임 메니저에 반영 해주기
         GameManager.eggCount += eggCount;
+        rabbit.eggInventory.Clear();
     }
 
 }

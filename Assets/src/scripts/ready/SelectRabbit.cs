@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SelectRabbit : MonoBehaviour
 {
-    // SelectbtnActive¿¡¼­ rabbitIndex¸¦ ¹ŞÀ½
-    // Æ¯Á¤ ÁÂÇ¥ÀÇ ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­ > readyRabbits[rabbitIndex] ¹øÂ° ¿ÀºêÁ§Æ® È°¼ºÈ­
-
+    // SelectbtnActiveì—ì„œ rabbitIndexë¥¼ ë°›ìŒ
+    // íŠ¹ì • ì¢Œí‘œì˜ ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™” > readyRabbits[rabbitIndex] ë²ˆì§¸ ì˜¤ë¸Œì íŠ¸ í™œì„±í™”
+/*
     public GameObject[] playableRabbit;
     public int playableRabbitIndex;
     bool isRabbitAcitve;
@@ -16,12 +16,12 @@ public class SelectRabbit : MonoBehaviour
         playableRabbitIndex = SelectbtnActive.rabbitIndex;
 
         isRabbitAcitve = false;
-        //ºñÈ°¼ºÈ­ ÇÔ¼ö È£Ãâ
+        //ë¹„í™œì„±í™” í•¨ìˆ˜ í˜¸ì¶œ
         //InactiveRabbit();
     }
     private void Start()
     {
-        //ÇØ´ç ¿ÀºêÁ§Æ® È°¼ºÈ­ ÇÔ¼ö È£Ãâ
+        //í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ í™œì„±í™” í•¨ìˆ˜ í˜¸ì¶œ
         InactiveRabbit();
         //isRabbitAcitve = true;
     }
@@ -32,21 +32,21 @@ public class SelectRabbit : MonoBehaviour
 
     public void InactiveRabbit()
     {
-        //¹İº¹¹®À¸·Î playableRabbitÀÇ ¿ÀºêÁ§Æ® ´Ù ºñÈ°¼ºÈ­½ÃÅ°±â
+        //ë°˜ë³µë¬¸ìœ¼ë¡œ playableRabbitì˜ ì˜¤ë¸Œì íŠ¸ ë‹¤ ë¹„í™œì„±í™”ì‹œí‚¤ê¸°
 
         for(int i=0;i<playableRabbit.Length;i++)
         {
             
             playableRabbit[i].SetActive(isRabbitAcitve);
-            Debug.Log(i + "¹øÂ° Åä³¢ »èÁ¦ ");
+            Debug.Log(i + "ë²ˆì§¸ í† ë¼ ì‚­ì œ ");
         }
 
     }
 
     void ActiveRabbit()
     {
-        //if¹®À¸·Î ÇØ´ç ÀÎµ¦½ºÀÇ playableRabbit È°¼ºÈ­ 
-        //Debug.Log( "denÀÇ ÀÎµ¦½º : "+playableRabbitIndex);
+        //ifë¬¸ìœ¼ë¡œ í•´ë‹¹ ì¸ë±ìŠ¤ì˜ playableRabbit í™œì„±í™” 
+        //Debug.Log( "denì˜ ì¸ë±ìŠ¤ : "+playableRabbitIndex);
         //Debug.Log("ddd " + SelectbtnActive.rabbitIndex);
         isRabbitAcitve = true;
 
@@ -76,7 +76,7 @@ public class SelectRabbit : MonoBehaviour
             Debug.Log("sss" + SelectbtnActive.rabbitIndex);
         }
 
-    }
+    }*/
 
 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GameLevel
 {
-    NORMAL, EXPERT, MASTER, KING
+    EASY, NORMAL, EXPERT, HARD
 }
 
 public enum GameLevelOption
@@ -17,17 +17,19 @@ public class LevelManager
     public static GameLevel gameLevel;
     private static Dictionary<GameLevelOption, int[]> dictionary;
     public static int GetGameLevelOptionData(GameLevelOption option)
-    {
-        Debug.Log(dictionary);
+    {        
         return dictionary[option][(int)gameLevel];
     }
 
     public LevelManager()
     {
-        InitializeGameLevel();
+        /*InitializeGameLevel();*/
         InitializeGameLevelOptionData();
     }
 
+    /// <summary>
+    /// 사용안함
+    /// </summary>
     private void InitializeGameLevel()
     {
         int gameLevelValue = PlayerPrefs.GetInt("GameLevel");
@@ -39,10 +41,13 @@ public class LevelManager
         dictionary = new Dictionary<GameLevelOption, int[]>();
         dictionary.Add(GameLevelOption.ITEM, new int[] { 8, 5, 3, 1 });
     }
-    private void SetGameLevel(int value)
+    public static void SetGameLevel(int value)
     {
         switch (value)
         {
+            case 0:
+                gameLevel = GameLevel.EASY;
+                break;
             case 1:
                 gameLevel = GameLevel.NORMAL;
                 break;
@@ -50,11 +55,9 @@ public class LevelManager
                 gameLevel = GameLevel.EXPERT;
                 break;
             case 3:
-                gameLevel = GameLevel.MASTER;
-                break;
-            case 4:
-                gameLevel = GameLevel.KING;
+                gameLevel = GameLevel.HARD;
                 break;
         }
+        Debug.Log(gameLevel);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 [System.Serializable]
@@ -23,6 +24,23 @@ public class UIManager
 
     [SerializeField]
     RectTransform endingPanel;
+
+    [SerializeField]
+    TMP_Text endingScoreBoard;
+
+    [SerializeField]
+    Sprite[] resultValueImages;
+
+    [SerializeField]
+    Sprite[] resultRankImages;
+
+    [SerializeField]
+    Image resultValueImage;
+
+    [SerializeField]
+    Image resultRankImage;
+
+
 
     public void Update()
     {
@@ -54,12 +72,24 @@ public class UIManager
     }
 
     public void OpenEndingBoard()
-    {   
-        endingPanel.anchoredPosition = new Vector2(0, 0);
+    {
+        endingScoreBoard.text = GameManager.eggCount.ToString();
+        if (GameManager.eggCount > 0)
+        {
+            resultValueImage.sprite = resultValueImages[1];
+        }
+        else
+        {
+            resultValueImage.sprite = resultValueImages[0];
+        }
+        //resultValueImage.sprite;
+        //resultRankImage.sprite;
+        endingPanel.gameObject.SetActive(true);
     }
 
     public void CloseEndingBoard()
     {
-        endingPanel.gameObject.SetActive(false);
+        SceneManager.LoadScene("Ready");
+        // endingPanel.gameObject.SetActive(false);
     }
 }
