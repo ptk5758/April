@@ -33,7 +33,5 @@ public class ItemManager
             GameObject obj = Object.Instantiate(boosterPrefab, transformsGroup);
             obj.transform.position = transforms[Random.Range(1, transforms.Length)].position;
         }
-        
     }
-
 }
