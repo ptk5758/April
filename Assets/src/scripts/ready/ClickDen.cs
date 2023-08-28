@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ClickDen : MonoBehaviour
 {
-    public Animator anim;
+    public GameObject readyObject;
+    public GameObject rabbitObject;
+
+    Animator rabbit;
+    Animator ready;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        rabbit = rabbitObject.GetComponent<Animator>();
+        ready = readyObject.GetComponent<Animator>();
     }
 
     public void ClickDenButton()
     {
-        anim.SetBool("Move", true);
+        Debug.Log("버튼 눌림");
+        ready.SetBool("Move", true);
+        rabbit.SetBool("RabbitMove", true);
     }
+ 
 }

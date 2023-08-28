@@ -1604,7 +1604,6 @@ GameObject:
   - component: {fileID: 1134829525}
   - component: {fileID: 1134829524}
   - component: {fileID: 1134829527}
-  - component: {fileID: 1134829528}
   m_Layer: 5
   m_Name: Den
   m_TagString: Untagged
@@ -1739,27 +1738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad31b004613290943bc1441e4c5d92aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!95 &1134829528
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134829522}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce95725994a700c498cb0389dfe9611d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  readyObject: {fileID: 1792821118}
+  rabbitObject: {fileID: 1220783291}
 --- !u!1 &1175847239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,6 +2374,7 @@ GameObject:
   - component: {fileID: 1792821121}
   - component: {fileID: 1792821120}
   - component: {fileID: 1792821122}
+  - component: {fileID: 1792821123}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -2409,7 +2390,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792821118}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2484,6 +2465,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1792821123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792821118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a12969e7e780d4c801af328d256d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069967129
 GameObject:
   m_ObjectHideFlags: 0
