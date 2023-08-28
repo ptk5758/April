@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public class UIManager
 {
+
+
     public static bool isPickUP = false;
 
     [SerializeField]
@@ -40,7 +43,9 @@ public class UIManager
     [SerializeField]
     Image resultRankImage;
 
-
+    public void Awake()
+    {
+    }
 
     public void Update()
     {
@@ -84,7 +89,7 @@ public class UIManager
         }
         //resultValueImage.sprite;
         //resultRankImage.sprite;
-        endingPanel.gameObject.SetActive(true);
+        endingPanel.gameObject.SetActive(true); 
     }
 
     public void CloseEndingBoard()

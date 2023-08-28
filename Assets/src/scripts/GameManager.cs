@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,6 +41,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private UIManager uiManager;
 
+    [SerializeField]
+    GameObject panel;
+
+    Animator anim;
+
     LevelManager levelManager;
     GameLevel gameLevel;
 
@@ -62,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        anim = panel.GetComponent<Animator>();
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -83,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
+        anim.SetBool("Level1", true);
         GameStop();
         uiManager.OpenEndingBoard();
     }
