@@ -7,11 +7,17 @@ public class Logline : MonoBehaviour
 {
     public GameObject[] logImage;
     public int images = 0;
+    public GameObject[] panelObject;
+    Animator anim;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
     {
-        //¿©±â¼­ ±âº»ÀûÀ¸·Î 5ÃÊ Áö³ª¸é ¿ÉÁ§ È°¼ºÈ­µÇµµ·Ï
+        //ì—¬ê¸°ì„œ ê¸°ë³¸ì ìœ¼ë¡œ 5ì´ˆ ì§€ë‚˜ë©´ ì˜µì  í™œì„±í™”ë˜ë„ë¡
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -22,6 +28,7 @@ public class Logline : MonoBehaviour
                 images++;
 
                 logImages.SetActive(true);
+                anim.Play("LogLine");
 
             }
             catch
@@ -34,6 +41,6 @@ public class Logline : MonoBehaviour
 
     void GoTitle()
     {
-        Debug.Log("title·Î ÀÌµ¿");
+        Debug.Log("titleë¡œ ì´ë™");
     }
 }
