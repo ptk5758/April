@@ -28,13 +28,6 @@ public class Logline : MonoBehaviour
                 images++;
 
                 logImages.SetActive(true);
-                if(images < 9)
-                {
-                    anim.Play("LogLine");
-                }else if(images == 9)
-                {
-                    anim.Play("SceneChange");
-                }
                 
             }
             catch
