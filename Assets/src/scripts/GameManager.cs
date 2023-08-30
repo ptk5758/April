@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    public static float playTime = 120f; // 여기 하드코딩
+    public static float playTime = 90f; // 여기 하드코딩
     public static int eggCount = 0;
     public static bool isPlay = true;
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        playTime = 120f; // 여기 하드코딩
+        playTime = 90f; // 여기 하드코딩
         eggCount = 0;
         isPlay = true;
     }
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
     {
         levelManager = new LevelManager();
         gameLevel = LevelManager.gameLevel;
+        Debug.Log("현재 난이도 : " + gameLevel);
     }
 
     public void GameEnd()
