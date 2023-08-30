@@ -37,7 +37,7 @@ public class ReadyPage : MonoBehaviour
         LevelManager.SetGameLevel(value);
         readyPageUI.ActiveLevelSelectBoard(false);
         basketAnimator.SetBool("isDown",true);
-        StartCoroutine(LoadScene("level1"));
+        StartCoroutine(LoadScene("level" + Random.Range(2, 6)));
     }
     IEnumerator LoadScene(string sceneName)
     {
