@@ -28,9 +28,10 @@ public class ItemManager
 
     private void SummonItem()
     {
+        GameObject[] objects = new GameObject[] { boosterPrefab, TimerPrefab };
         for (int i=0; i<maxItem; i++)
         {
-            GameObject obj = Object.Instantiate(boosterPrefab, transformsGroup);
+            GameObject obj = Object.Instantiate(objects[Random.Range(0, 2)], transformsGroup);
             obj.transform.position = transforms[Random.Range(1, transforms.Length)].position;
         }
     }

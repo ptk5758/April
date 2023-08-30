@@ -1975,8 +1975,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: N
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
-  m_sharedMaterial: {fileID: 465546339739449112, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5413,8 +5413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemManager:
     transformsGroup: {fileID: 865667972}
-    boosterPrefab: {fileID: 1408292744907824130, guid: 9a262b5a376af444dadad1814a4b431f, type: 3}
-    TimerPrefab: {fileID: 8237743778548851070, guid: daf37130b672442fe9e9ea3a7ebf6fda, type: 3}
+    boosterPrefab: {fileID: 3847377044464257545, guid: a47fc112590d8b34b99145f57ed087f3, type: 3}
+    TimerPrefab: {fileID: 2050076934447891126, guid: d75f6121391530a46a42d58268f59b5c, type: 3}
   enemyController:
     enemyManager: {fileID: 1964399387}
     coolTime: 10
@@ -8060,8 +8060,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Score N
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
-  m_sharedMaterial: {fileID: 465546339739449112, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10053,7 +10053,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: GO TITLE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10117,7 +10117,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1134724243
@@ -11478,7 +11478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1264849115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15651,8 +15651,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'TIME  00 : 00'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
-  m_sharedMaterial: {fileID: 465546339739449112, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17565,7 +17565,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c4e4eba4ccfa71147a296de6eda8a44d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17629,7 +17629,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2061804786
