@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public static float playTime = 10f;
     public static int eggCount = 0;
+    public static bool isPlay = true;
 
     [SerializeField]
     private ItemManager itemManager;
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
 
     Animator anim;
 
+    [SerializeField]
+    private GameObject systemPanel;
+    public bool isSystemPanel;
+
     LevelManager levelManager;
     GameLevel gameLevel;
 
@@ -52,13 +57,17 @@ public class GameManager : MonoBehaviour
     {
         playTime = 10f;
         eggCount = 0;
+        isPlay = true;
+    }
+    private void OnEnable()
+    {
     }
 
     private void Update()
     {
         playTime -= Time.deltaTime;
         if (playTime <= 0) GameEnd();
-
+        if (Input.GetKeyDown(KeyCode.Escape)) isSystemPanel = !isSystemPanel;
     }
     private void Start()
     {
@@ -67,8 +76,22 @@ public class GameManager : MonoBehaviour
 
     private void LateUpdate()
     {
-
+        if (isPlay) { 
+            if (isSystemPanel) OpenSystemPanel();
+            else CloseSystemPanel();
+        }
         uiManager.Update();
+    }
+
+    private void OpenSystemPanel()
+    {
+        GameStop();
+        systemPanel.SetActive(true);
+    }
+    private void CloseSystemPanel()
+    {
+        GameResume();
+        systemPanel.SetActive(false);
     }
 
     private void Awake()
@@ -82,7 +105,6 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        //DontDestroyOnLoad(gameObject);
         InitializeInstance();
         itemManager.InitializeItemManager();
 
@@ -95,6 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
+        isPlay = false;
         anim.SetBool("Level1", true);
         GameStop();
         uiManager.OpenEndingBoard();
@@ -105,9 +128,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public static void GameResume() {
+        Time.timeScale = 1;
+    }
+
     public void CloseEndingBoard() 
     {
         Time.timeScale = 1;
         uiManager.CloseEndingBoard();
+    }
+
+    public static void QuitGame()
+    {
+        Application.Quit();
     }
 }
