@@ -10,6 +10,21 @@ public class Logline : MonoBehaviour
     public GameObject[] panelObject;
     Animator anim;
 
+    GameObject Dj;
+    AudioSource backMusic;
+
+    private void Awake()
+    {
+        Dj = GameObject.Find("Dj");
+        backMusic = Dj.GetComponent<AudioSource>();
+        if (backMusic.isPlaying) return;
+        else
+        {
+            backMusic.Play();
+            DontDestroyOnLoad(Dj);
+        }
+    }
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -48,5 +63,9 @@ public class Logline : MonoBehaviour
     void GoTitle()
     {
         Debug.Log("title로 이동");   
+
     }
+
+
+
 }
