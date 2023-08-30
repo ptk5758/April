@@ -28,8 +28,7 @@ public class Logline : MonoBehaviour
                 images++;
 
                 logImages.SetActive(true);
-                anim.Play("LogLine");
-
+                
             }
             catch
             {
@@ -39,8 +38,15 @@ public class Logline : MonoBehaviour
         }
     }
 
+    void ChangeScene()
+    {
+        Debug.Log("타이틀씬으로 이동");
+        LoadingManager.sceneName = "title";
+        SceneManager.LoadScene("LoadingScene");
+    }
+
     void GoTitle()
     {
-        Debug.Log("title로 이동");
+        Debug.Log("title로 이동");   
     }
 }
