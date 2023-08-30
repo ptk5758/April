@@ -12054,6 +12054,8 @@ MonoBehaviour:
     resultValueImage: {fileID: 1973534136}
     resultRankImage: {fileID: 1650830602}
   panel: {fileID: 1264849114}
+  systemPanel: {fileID: 0}
+  isSystemPanel: 0
 --- !u!4 &657296394
 Transform:
   m_ObjectHideFlags: 0
@@ -17144,7 +17146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -527, y: -169}
+  m_AnchoredPosition: {x: -527, y: -77.9}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927116636
