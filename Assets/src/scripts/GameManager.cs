@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -141,5 +142,10 @@ public class GameManager : MonoBehaviour
     public static void QuitGame()
     {
         Application.Quit();
+    }
+
+    public static void GoTitle()
+    {
+        SceneManager.LoadScene("Ready");
     }
 }
