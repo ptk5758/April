@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         private set { instance = value; }
     }
 
-    public static float playTime = 10f;
+    public static float playTime = 120f; // 여기 하드코딩
     public static int eggCount = 0;
     public static bool isPlay = true;
 
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        playTime = 10f;
+        playTime = 120f; // 여기 하드코딩
         eggCount = 0;
         isPlay = true;
     }
