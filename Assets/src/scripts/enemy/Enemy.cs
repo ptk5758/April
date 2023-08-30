@@ -63,14 +63,18 @@ class Destination
 
 class DetectObserver
 {
+    Rabbit rabbit;
+    public DetectObserver()
+    {
+        rabbit = GameObject.FindObjectOfType<RabbitImple>();
+    }
     public void DetectedObject(GameObject gameObject)
     {
         if (gameObject.tag == "Player") DetectedPlayer();
     }
 
     public void DetectedPlayer()
-    {
-        Rabbit rabbit = Rabbit.instance;
+    {       
         rabbit.eggInventory.Clear();
         rabbit.Spawn();
     }

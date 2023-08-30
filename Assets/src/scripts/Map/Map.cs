@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,25 +17,25 @@ public class Map : MonoBehaviour
     
     void Update()
     {
-        //Update¶û Start¿¡¼­ ActiveMap() ÇÔ¼ö¸¦ ½ÇÇà½ÃÅ°¸é ·£´ı¼ıÀÚ¸¦ µÎ¹ø ¹Ş¾Æ¿À´Âµ¥ ¿ÖÀÎÁö ¸ğ¸£°ÚÀ½ -> ÀÌÀ¯°¡ ±Ã±İ
+        //Updateë‘ Startì—ì„œ ActiveMap() í•¨ìˆ˜ë¥¼ ì‹¤í–‰ì‹œí‚¤ë©´ ëœë¤ìˆ«ìë¥¼ ë‘ë²ˆ ë°›ì•„ì˜¤ëŠ”ë° ì™œì¸ì§€ ëª¨ë¥´ê² ìŒ -> ì´ìœ ê°€ ê¶ê¸ˆ
         //if (ActiveBool == true) 
         //{
         //    ActiveMap();
-        //    ActiveBool = false; //¸ÊÀÌ Update·Î ÀÎÇØ¼­ °è¼Ó ¹Ù²î´Â °ÍÀ» ¹æÁö?
-        //    Debug.Log("ÁßÁö");
+        //    ActiveBool = false; //ë§µì´ Updateë¡œ ì¸í•´ì„œ ê³„ì† ë°”ë€ŒëŠ” ê²ƒì„ ë°©ì§€?
+        //    Debug.Log("ì¤‘ì§€");
         //}
 
     }
 
-    public void ActiveMap() //·£´ı ¼ıÀÚ¸¦ ¹Ş¾Æ¼­ ±× ¼ıÀÚ¿¡ ÀÖ´Â ¹è¿­ÀÇ Object¸¦ È°¼ºÈ­
+    public void ActiveMap() //ëœë¤ ìˆ«ìë¥¼ ë°›ì•„ì„œ ê·¸ ìˆ«ìì— ìˆëŠ” ë°°ì—´ì˜ Objectë¥¼ í™œì„±í™”
     {
         if (LevelNumber.selectLevel >= 0)
         {
             RandomInt = Random.Range(0, 4);
             
         }
-        Debug.Log("¸Ê È°¼ºÈ­");
-        Debug.Log(RandomInt + " ·£´ı ¼ıÀÚ");
+        Debug.Log("ë§µ í™œì„±í™”");
+        Debug.Log(RandomInt + " ëœë¤ ìˆ«ì");
         MapObject = MapRandom[RandomInt];
         MapObject.gameObject.SetActive(true);
     }
