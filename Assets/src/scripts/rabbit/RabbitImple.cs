@@ -12,11 +12,11 @@ public abstract class RabbitImple : MonoBehaviour, Rabbit
 
     private void Awake()
     {
-        if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject); // -> gameObject는 뭘 얘기하는거지?
+        // if (Rabbit.instance != null && Rabbit.instance != this) Destroy(gameObject); // -> gameObject는 뭘 얘기하는거지?
         //Destroy : 게임 오브젝트 삭제 
         //Rabbit에서 instance에 obj를 넣어줬기 때문에 null이 아니면은 뭔가를 먹은거니까 해당 Object를 삭제시킴
         // -> 먹은 건 없애야하기(비활성화) 때문에
-        else Rabbit.instance = this;  
+        // else Rabbit.instance = this;  
         //**** this가 가르키는게 뭔지 모르겠음 **** -> 스크립트 자체를 얘기하는 건가?
         InitializeToAwak();
     }

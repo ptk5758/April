@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
     public static float playTime = 10f;
     public static int eggCount = 0;
-    public static bool isPlaying = true;
 
     [SerializeField]
     private ItemManager itemManager;
@@ -48,6 +47,12 @@ public class GameManager : MonoBehaviour
 
     LevelManager levelManager;
     GameLevel gameLevel;
+
+    private void OnDisable()
+    {
+        playTime = 10f;
+        eggCount = 0;
+    }
 
     private void Update()
     {

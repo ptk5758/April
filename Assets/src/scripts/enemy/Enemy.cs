@@ -15,9 +15,9 @@ public abstract class Enemy : MonoBehaviour
         this.destination = new Destination(gameObject.GetComponent<NavMeshAgent>());
         this.rigidbody = gameObject.GetComponent<Rigidbody>();
     }
-    private void Start()
+    private void OnEnable()
     {
-        this.target = Rabbit.instance.GetTransform();
+        this.target = GameObject.FindObjectOfType<RabbitImple>().GetTransform();
     }
     private void OnCollisionEnter(Collision collision)
     {
